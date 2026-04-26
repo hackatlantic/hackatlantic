@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { toast, Toaster } from 'sonner';
 import { supabase } from '../lib/supabase';
-
+import { Analytics } from "@vercel/analytics/next"
 const RATE_LIMIT_KEY = 'hackatlantic_last_signup_attempt';
 const RATE_LIMIT_MS = 60_000;
 
