@@ -43,7 +43,7 @@ export default function App() {
     {
       question: "Who can attend?",
       answer:
-        "Any student 18+ from Atlantic Canada is welcome! Whether you're in high school, university, or college, we'd love to have you.",
+        "High school/university students can attend.",
     },
     {
       question: "How much does it cost?",
@@ -53,22 +53,22 @@ export default function App() {
     {
       question: "What should I bring?",
       answer:
-        "Bring your laptop, chargers, student ID, and yourself! We'll take care of the rest.",
+        "Bring your laptop, chargers, sleeping bag, and deodorant..",
     },
     {
       question: "Do I need a team?",
       answer:
-        "Nope! You can come solo and find a team at the event, or bring your own team of up to 4 people.",
+        "Teams can be 1-4 people. Go solo, bring a team, or find one at the event!",
     },
     {
       question: "What can I build?",
       answer:
-        "Anything! We encourage you to build whatever you're passionate about. There will be different prize categories to compete in.",
+        "Anything! We encourage you to build whatever you're passionate about. We will have a hardware and software category, as well as side prizes..",
     },
     {
       question: "Is there travel support?",
       answer:
-        "Yes! We offer travel reimbursements for students coming from outside the local area. Details will be sent to accepted hackers.",
+        "We are not able to offer travel reimbursements at this time.",
     },
     {
       question: "What if I'm a beginner?",
@@ -88,12 +88,12 @@ export default function App() {
     {
       question: "What are the prizes?",
       answer:
-        "We'll have over $10,000 in prizes across multiple categories! Details will be announced closer to the event.",
+        "Prizes will be anounced closer to the event.",
     },
     {
       question: "How long is the hackathon?",
       answer:
-        "Hack Atlantic is a 36-hour hackathon, giving you plenty of time to build something amazing!",
+        "Hack Atlantic is a 24-hour hackathon, giving you plenty of time to build something amazing!",
     },
   ];
 
@@ -372,7 +372,7 @@ export default function App() {
                   hackathon
                 </p>
                 <a
-                  href="#"
+                  href="/join"
                   className="inline-block bg-white text-[#0A1628] px-6 py-3 rounded-lg font-bold hover:bg-white/90 transition-all text-sm"
                 >
                   Apply Now
