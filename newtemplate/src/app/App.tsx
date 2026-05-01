@@ -5,23 +5,6 @@ import grosMorne from "../imports/grosmorne-1.png";
 import confederationSky from "../imports/confederationsky.png";
 import confederationBridge from "../imports/confederationbridge-1.png";
 import { useState, useEffect } from "react";
-import { toast, Toaster } from "sonner";
-import { supabase } from "../lib/supabase";
-
-const RATE_LIMIT_KEY = 'hackatlantic_last_signup_attempt';
-const RATE_LIMIT_MS = 60_000;
-
-function getRemainingCooldown(): number {
-  try {
-    const raw = localStorage.getItem(RATE_LIMIT_KEY);
-    if (!raw) return 0;
-    const elapsed = Date.now() - parseInt(raw, 10);
-    const remaining = RATE_LIMIT_MS - elapsed;
-    return remaining > 0 ? Math.ceil(remaining / 1000) : 0;
-  } catch {
-    return 0;
-  }
-}
 
 export default function App() {
   const [email, setEmail] = useState("");
@@ -31,8 +14,6 @@ export default function App() {
     y: 0,
   });
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [joinLoading, setJoinLoading] = useState(false);
 
   const faqs = [
     {
@@ -109,55 +90,11 @@ export default function App() {
       window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const handleSubmit = async () => {
-    if (!email) return;
-    const remaining = getRemainingCooldown();
-    if (remaining > 0) {
-      toast.error(`Please wait ${remaining} second${remaining === 1 ? '' : 's'} before trying again.`);
-      return;
-    }
-    setLoading(true);
-    try { localStorage.setItem(RATE_LIMIT_KEY, String(Date.now())); } catch {}
-    const { error } = await supabase.from('email_signups').insert({ email });
-    setLoading(false);
-    if (!error) {
-      toast.success("You're on the list! We'll notify you when applications open.");
-      setEmail('');
-    } else if (error.code === '23505') {
-      toast.error("You're already signed up!");
-    } else {
-      toast.error('Something went wrong, try again.');
-    }
-  };
-
-  const handleJoinSubmit = async () => {
-    if (!joinEmail) return;
-    const remaining = getRemainingCooldown();
-    if (remaining > 0) {
-      toast.error(`Please wait ${remaining} second${remaining === 1 ? '' : 's'} before trying again.`);
-      return;
-    }
-    setJoinLoading(true);
-    try { localStorage.setItem(RATE_LIMIT_KEY, String(Date.now())); } catch {}
-    const { error } = await supabase.from('email_signups').insert({ email: joinEmail });
-    setJoinLoading(false);
-    if (!error) {
-      toast.success("You're on the list! We'll notify you when applications open.");
-      setJoinEmail('');
-    } else if (error.code === '23505') {
-      toast.error("You're already signed up!");
-    } else {
-      toast.error('Something went wrong, try again.');
-    }
-  };
-
   return (
     <div
       className="size-full bg-slate-900 overflow-auto"
       style={{ fontFamily: "Fredoka, sans-serif" }}
     >
-      <Toaster position="bottom-center" richColors />
-
       {/* Navigation */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
         <div
@@ -270,26 +207,16 @@ export default function App() {
             >
               Notify me when applications open
             </p>
-            <div className="flex gap-2 w-full sm:w-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
-                placeholder="Enter your email"
-                className="backdrop-blur-md text-gray-900 px-6 py-3 rounded-lg shadow-lg border-2 border-gray-900/20 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-80"
-                style={{
-                  backgroundColor: "rgba(255, 250, 245, 0.5)",
-                }}
-              />
-              <button
-                onClick={handleSubmit}
-                disabled={loading}
-                className="px-6 py-3 bg-gray-900 text-white rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50 font-medium whitespace-nowrap"
-              >
-                {loading ? '...' : 'Notify Me'}
-              </button>
-            </div>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="backdrop-blur-md text-gray-900 px-6 py-3 rounded-lg shadow-lg border-2 border-gray-900/20 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-80"
+              style={{
+                backgroundColor: "rgba(255, 250, 245, 0.5)",
+              }}
+            />
           </div>
         </div>
       </div>
@@ -405,20 +332,12 @@ export default function App() {
                   type="email"
                   value={joinEmail}
                   onChange={(e) => setJoinEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleJoinSubmit()}
                   placeholder="Enter your email"
                   className="w-full backdrop-blur-md text-gray-900 px-4 py-3 rounded-lg shadow-lg border-2 border-white/20 focus:outline-none focus:ring-2 focus:ring-white text-sm"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.9)",
                   }}
                 />
-                <button
-                  onClick={handleJoinSubmit}
-                  disabled={joinLoading}
-                  className="mt-3 w-full bg-white text-[#0A1628] px-4 py-3 rounded-lg font-bold hover:bg-white/90 transition-all text-sm disabled:opacity-50"
-                >
-                  {joinLoading ? '...' : 'Notify Me'}
-                </button>
               </div>
             </div>
           </div>
