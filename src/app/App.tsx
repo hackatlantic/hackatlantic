@@ -188,19 +188,23 @@ export default function App() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="mailto:hello@hackatlantic.ca"
+              href="mailto:team@hackatlantic.ca"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Mail size={20} />
             </a>
             <a
-              href="#instagram"
+              href="https://www.instagram.com/hackatlantic"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Instagram size={20} />
             </a>
             <a
-              href="#linkedin"
+              href="https://www.linkedin.com/company/hack-atlantic/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Linkedin size={20} />
