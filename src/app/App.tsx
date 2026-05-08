@@ -333,7 +333,7 @@ export default function App() {
       </section>
 
       {/* Gros Morne Section */}
-      <section className="relative -mt-[230px] z-20">
+      <section className="relative -mt-[170px] md:-mt-[230px] z-20">
         <div
           className="transition-transform duration-200 ease-out"
           style={{
