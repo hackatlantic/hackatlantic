@@ -153,7 +153,7 @@ export default function App() {
 
   return (
     <div
-      className="size-full bg-slate-900 overflow-y-auto overflow-x-hidden"
+      className="size-full bg-slate-900 overflow-y-auto overflow-x-hidden scroll-smooth"
       style={{ fontFamily: "Fredoka, sans-serif" }}
     >
       <Toaster position="bottom-center" richColors />
