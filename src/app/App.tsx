@@ -437,7 +437,7 @@ export default function App() {
       </section>
 
       {/* Confederation Bridge Section */}
-      <section className="relative -mt-[150px]">
+      <section className="relative -mt-[150px] z-10">
         {/* Sky Background Layer - Full Image */}
         <img
           src={confederationSky}
