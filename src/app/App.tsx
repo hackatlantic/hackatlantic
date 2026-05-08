@@ -153,7 +153,7 @@ export default function App() {
 
   return (
     <div
-      className="size-full bg-slate-900 overflow-auto"
+      className="size-full bg-slate-900 overflow-y-auto overflow-x-hidden"
       style={{ fontFamily: "Fredoka, sans-serif" }}
     >
       <Toaster position="bottom-center" richColors />
@@ -214,7 +214,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
+      <div className="relative h-screen z-20">
         {/* Sky Background Layer - fills full hero height */}
         <div className="absolute inset-0">
           <img
@@ -225,9 +225,9 @@ export default function App() {
           />
         </div>
 
-        {/* Hopewell Rocks Layer - drives hero height */}
+        {/* Hopewell Rocks Layer - covers full hero, anchored left */}
         <div
-          className="relative z-30 transition-transform duration-200 ease-out"
+          className="absolute inset-x-0 top-0 -bottom-[220px] z-30 transition-transform duration-200 ease-out"
           style={{
             transform: `translate(${mousePosition.x}px, calc(${mousePosition.y}px + 50px)) scale(1.05)`,
           }}
@@ -235,10 +235,10 @@ export default function App() {
           <img
             src={hopewellRocks}
             alt="Hopewell Rocks"
-            className="w-full block"
+            className="w-full h-full object-cover"
             style={{
-              height: "auto",
-              display: "block"
+              objectPosition: "left center",
+              display: "block",
             }}
           />
         </div>
@@ -301,14 +301,14 @@ export default function App() {
       {/* About Section */}
       <section
         id="about"
-        className="relative bg-[#4A1A1A] min-h-screen py-20 px-6 z-10"
+        className="relative bg-[#4A1A1A] min-h-screen px-6 z-10"
         style={{
-          marginTop: "-200px",
-          paddingTop: "calc(24rem)",
-          paddingBottom: "200px",
+          marginTop: "clamp(-200px, calc(-150px - 0.092 * (100vw - 480px)), -150px)",
+          paddingTop: "clamp(400px, calc(400px + 0.184 * (100vw - 480px)), 500px)",
+          paddingBottom: "375px",
         }}
       >
-        <div className="max-w-3xl mx-auto -mt-[75px]">
+        <div className="max-w-3xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-bold text-center mb-12 text-white">
             About Hack Atlantic
           </h2>
@@ -333,7 +333,7 @@ export default function App() {
       </section>
 
       {/* Gros Morne Section */}
-      <section className="relative -mt-[180px] z-20">
+      <section className="relative -mt-[230px] z-20">
         <div
           className="transition-transform duration-200 ease-out"
           style={{
