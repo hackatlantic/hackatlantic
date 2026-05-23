@@ -1,6 +1,5 @@
 import { Mail, Instagram, Linkedin } from "lucide-react";
 import skyBackground from "../imports/skybackground.png";
-import hopewellRocks from "../imports/hopewellrocks-2.png";
 import grosMorne from "../imports/grosmorne-1.png";
 import confederationSky from "../imports/confederationsky.png";
 import confederationBridge from "../imports/confederationbridge-1.png";
@@ -225,22 +224,21 @@ export default function App() {
           />
         </div>
 
-        {/* Hopewell Rocks Layer - covers full hero, anchored left */}
-        <div
-          className="absolute inset-x-0 top-0 -bottom-[220px] z-30 transition-transform duration-200 ease-out"
-          style={{
-            transform: `translate(${mousePosition.x}px, calc(${mousePosition.y}px + 50px)) scale(1.05)`,
-          }}
-        >
-          <img
-            src={hopewellRocks}
-            alt="Hopewell Rocks"
-            className="w-full h-full object-cover"
+        {/* Hopewell Rocks */}
+        <div className="absolute inset-x-0 top-0 -bottom-[220px] z-30 overflow-hidden">
+          <div
+            className="absolute inset-0 transition-transform duration-200 ease-out"
             style={{
-              objectPosition: "left center",
-              display: "block",
+              transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
             }}
-          />
+          >
+            <img
+              src="/photos/hopewellrocks.png"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: "center", transform: "scale(1.05)" }}
+            />
+          </div>
         </div>
 
         {/* Content */}
