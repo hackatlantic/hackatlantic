@@ -324,7 +324,7 @@ export default function App() {
               coding, lots of caffeine, and real projects.
               You'll meet sponsors and employers who want to
               support you as well as see what you're capable of.
-              It's going to be insane.
+              
             </p>
           </div>
         </div>
