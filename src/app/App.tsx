@@ -262,6 +262,15 @@ export default function App() {
           >
             Atlantic Canada's largest student run hackathon
           </p>
+          <p
+            className="text-xl md:text-2xl text-gray-900 mb-6 font-semibold"
+            style={{
+              textShadow:
+                "0 0 8px rgba(255, 255, 255, 0.55), 0 0 15px rgba(255, 255, 255, 0.25)",
+            }}
+          >
+            Sep 26-27
+          </p>
           <div className="flex flex-col items-start gap-3">
             <p
               className="text-xl text-gray-900 font-normal"
