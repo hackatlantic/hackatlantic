@@ -24,14 +24,12 @@ function getRemainingCooldown(): number {
 
 export default function App() {
   const [email, setEmail] = useState("");
-  const [joinEmail, setJoinEmail] = useState("");
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   });
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
-  const [joinLoading, setJoinLoading] = useState(false);
 
   const faqs = [
     {
@@ -133,31 +131,6 @@ export default function App() {
     }
   };
 
-  const handleJoinSubmit = async () => {
-    if (!joinEmail) return;
-    if (!supabase) {
-      toast.error('Email signup is not configured for this local preview.');
-      return;
-    }
-    const remaining = getRemainingCooldown();
-    if (remaining > 0) {
-      toast.error(`Please wait ${remaining} second${remaining === 1 ? '' : 's'} before trying again.`);
-      return;
-    }
-    setJoinLoading(true);
-    try { localStorage.setItem(RATE_LIMIT_KEY, String(Date.now())); } catch {}
-    const { error } = await supabase.from('email_signups').insert({ email: joinEmail });
-    setJoinLoading(false);
-    if (!error) {
-      toast.success("You're on the list! We'll notify you when applications open.");
-      setJoinEmail('');
-    } else if (error.code === '23505') {
-      toast.error("You're already signed up!");
-    } else {
-      toast.error('Something went wrong, try again.');
-    }
-  };
-
   return (
     <div
       className="size-full bg-slate-900 overflow-y-auto overflow-x-hidden scroll-smooth"
@@ -187,10 +160,10 @@ export default function App() {
               FAQ
             </a>
             <a
-              href="#join"
+              href="#sponsors"
               className="text-gray-800 hover:text-blue-600 transition-colors"
             >
-              Join Us
+              Sponsors
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -382,85 +355,55 @@ export default function App() {
         </div>
       </section>
 
-      {/* Join Us Section */}
+      {/* Sponsors Section */}
       <section
-        id="join"
+        id="sponsors"
         className="relative bg-[#0A1628] min-h-screen py-20 px-6 -mt-[300px]"
         style={{ paddingBottom: "400px" }}
       >
         <div className="max-w-3xl mx-auto mt-[300px]">
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-12 text-center">
-            Join Us!
+            Sponsors
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            {/* Left Column */}
-            <div>
-              {/* Join the org team */}
-              <div className="md:mt-0">
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  Join the org team
-                </h3>
-                <p className="text-base text-white/80 mb-4 font-normal">
-                  Help organize Atlantic Canada's largest student
-                  hackathon
-                </p>
-                <a
-                  href="/join"
-                  className="inline-block bg-white text-[#0A1628] px-6 py-3 rounded-lg font-bold hover:bg-white/90 transition-all text-sm"
-                >
-                  Apply Now
-                </a>
-              </div>
+          <div className="space-y-10 text-center">
+            <p className="text-xl md:text-2xl text-white/80 font-normal">
+              Thank you to the organizations supporting Hack Atlantic.
+            </p>
 
-              {/* Sponsor Section - Below on left */}
-              <div className="mt-16">
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  Sponsor Hack Atlantic
-                </h3>
-                <p className="text-base text-white/80 font-normal">
-                  email us at team@hackatlantic.ca
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column */}
-            <div>
-              {/* Join as a competitor - Staggered down */}
-              <div className="md:mt-16">
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  Join as a competitor
-                </h3>
-                <p className="text-base text-white/80 mb-4 font-normal">
-                  Be the first to know when hacker applications go
-                  live
-                </p>
-                <input
-                  type="email"
-                  value={joinEmail}
-                  onChange={(e) => setJoinEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleJoinSubmit()}
-                  placeholder="Enter your email"
-                  className="w-full backdrop-blur-md text-gray-900 px-4 py-3 rounded-lg shadow-lg border-2 border-white/20 focus:outline-none focus:ring-2 focus:ring-white text-sm"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                  }}
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/mlh-logo-color.png"
+                  alt="Major League Hacking"
+                  className="max-h-24 w-auto max-w-full object-contain"
                 />
-                <button
-                  onClick={handleJoinSubmit}
-                  disabled={joinLoading}
-                  className="mt-3 w-full bg-white text-[#0A1628] px-4 py-3 rounded-lg font-bold hover:bg-white/90 transition-all text-sm disabled:opacity-50"
-                >
-                  {joinLoading ? '...' : 'Notify Me'}
-                </button>
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-unb.png"
+                  alt="University of New Brunswick"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-introhive.png"
+                  alt="Introhive"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-snowflake.png"
+                  alt="Snowflake"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
               </div>
             </div>
-          </div>
 
-          {/* Sponsors Coming Soon */}
-          <div className="mt-16 text-center">
-            <p className="text-4xl md:text-5xl text-white/80 font-normal">
-              Sponsors coming soon ;)
+            <p className="text-base text-white/60 font-normal">
+              More sponsors will be announced soon.
             </p>
           </div>
         </div>
