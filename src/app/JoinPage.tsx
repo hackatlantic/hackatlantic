@@ -32,6 +32,10 @@ export default function JoinPage() {
 
   const onSubmit = async (data: JoinFormValues) => {
     try {
+      if (!supabase) {
+        throw new Error("Organizer applications are not configured for this local preview.");
+      }
+
       const file = data.resume[0];
       const fileExt = file.name.split(".").pop();
       const fileName = `${crypto.randomUUID()}.${fileExt}`;
