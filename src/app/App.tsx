@@ -110,6 +110,10 @@ export default function App() {
 
   const handleSubmit = async () => {
     if (!email) return;
+    if (!supabase) {
+      toast.error('Email signup is not configured for this local preview.');
+      return;
+    }
     const remaining = getRemainingCooldown();
     if (remaining > 0) {
       toast.error(`Please wait ${remaining} second${remaining === 1 ? '' : 's'} before trying again.`);
@@ -131,6 +135,10 @@ export default function App() {
 
   const handleJoinSubmit = async () => {
     if (!joinEmail) return;
+    if (!supabase) {
+      toast.error('Email signup is not configured for this local preview.');
+      return;
+    }
     const remaining = getRemainingCooldown();
     if (remaining > 0) {
       toast.error(`Please wait ${remaining} second${remaining === 1 ? '' : 's'} before trying again.`);
@@ -208,6 +216,21 @@ export default function App() {
             >
               <Linkedin size={20} />
             </a>
+            <div className="ml-1 self-stretch border-l border-gray-900/20 pl-4">
+              <div
+                className="relative -mb-12 -mt-3 flex h-24 w-24 items-start justify-center bg-white px-3 pt-3 shadow-md"
+                style={{
+                  clipPath:
+                    "polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)",
+                }}
+              >
+                <img
+                  src="/mlh-logo-color.png"
+                  alt="Major League Hacking"
+                  className="mt-2 h-7 w-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </nav>
