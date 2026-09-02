@@ -381,6 +381,13 @@ export default function App() {
               </div>
               <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
                 <img
+                  src="/sponsor-bluebird.png"
+                  alt="Bluebird Consulting"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
                   src="/sponsor-unb.png"
                   alt="University of New Brunswick"
                   className="max-h-24 w-auto max-w-full object-contain"
@@ -418,6 +425,27 @@ export default function App() {
                 <img
                   src="/sponsor-elaras.png"
                   alt="Elaras Consulting Ltd"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-nordvpn.png"
+                  alt="NordVPN"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-incogni.png"
+                  alt="Incogni"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-saily.png"
+                  alt="Saily"
                   className="max-h-24 w-auto max-w-full object-contain"
                 />
               </div>
