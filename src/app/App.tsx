@@ -388,6 +388,13 @@ export default function App() {
               </div>
               <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
                 <img
+                  src="/sponsor-smartskin.png"
+                  alt="Smart Skin Technologies"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
                   src="/sponsor-unb.png"
                   alt="University of New Brunswick"
                   className="max-h-24 w-auto max-w-full object-contain"
@@ -432,6 +439,13 @@ export default function App() {
                 <img
                   src="/sponsor-nordvpn.png"
                   alt="NordVPN"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-nordpass.png"
+                  alt="NordPass"
                   className="max-h-24 w-auto max-w-full object-contain"
                 />
               </div>
