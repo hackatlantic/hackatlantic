@@ -61,3 +61,22 @@ indexing, a particular snippet or first place. Crawling changes takes time.
 - [Site-name structured data](https://developers.google.com/search/docs/appearance/site-names)
 - [Supported meta tags](https://developers.google.com/search/docs/crawling-indexing/special-tags)
 - [Sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+# Design and deployment source
+
+The landing repository is `hackatlantic/hackatlantic`; its integration branch
+is `master` (not the separate ATS repository's `main`). Before a metadata-only
+deployment, compare the current production deployment SHA with `master` and
+inspect any divergent design branch. A successful build does not establish
+that the intended production design is present.
+
+On 2026-09-03, the SEO deployment exposed an existing divergence: `master`
+contained design revert `8ed9621`, while production had subsequently deployed
+Dax's `codex/landing-experience-redeploy` commit `c78aa6f`. The restoration merges
+that complete design history into `master` while preserving SEO. UI source,
+artwork, sponsor assets, and dependency lockfile match Dax's branch. Tests were
+aligned with his Apply label, 13 sponsors, and scrolling navbar.
+
+For future releases, integrate approved design work into `master` before its
+production deployment, then verify the public site and deployed commit—not just
+a feature-branch preview. Do not let an SEO-only change silently replace a
+different production design.

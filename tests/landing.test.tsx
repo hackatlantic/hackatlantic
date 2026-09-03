@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
-import { render, screen, within, waitFor } from "@testing-library/react";
+import { render, screen, within, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { LandingNav } from "../src/app/components/landing/LandingNav";
 import { LandingFAQ } from "../src/app/components/landing/LandingFAQ";
@@ -12,7 +12,7 @@ import { CoastPostcard } from "../src/app/components/landing/CoastPostcard";
 import {
   APPLICATION_URL,
   faqs,
-  sponsors,
+  sponsorRows,
 } from "../src/app/components/landing/content";
 import {
   ditherColor,
@@ -26,6 +26,7 @@ vi.mock("motion/react", async (importOriginal) => ({
 }));
 beforeEach(() => {
   preferences.reduced = true;
+  Object.defineProperty(window, "scrollY", { configurable: true, value: 0 });
   window.history.replaceState(null, "", "/");
 });
 
@@ -37,13 +38,26 @@ describe("application links", () => {
         <ApplyLink compact />
       </>,
     );
-    for (const link of screen.getAllByRole("link", { name: "Apply now" }))
+    const links = screen.getAllByRole("link", { name: "Apply", exact: true });
+    expect(links).toHaveLength(2);
+    for (const link of links)
       expect(link).toHaveAttribute("href", APPLICATION_URL);
     expect(APPLICATION_URL).toBe("https://apply.hackatlantic.ca/");
   });
 });
 
 describe("mobile navigation", () => {
+  it("preserves Dax's hide-on-scroll-down and reveal-on-scroll-up behavior", () => {
+    const { container } = render(<LandingNav />);
+    const header = container.querySelector("header");
+    expect(header).not.toHaveClass("is-hidden");
+    Object.defineProperty(window, "scrollY", { configurable: true, value: 180 });
+    fireEvent.scroll(window);
+    expect(header).toHaveClass("is-hidden");
+    Object.defineProperty(window, "scrollY", { configurable: true, value: 150 });
+    fireEvent.scroll(window);
+    expect(header).not.toHaveClass("is-hidden");
+  });
   it("opens a named modal with navigation and an Apply link", async () => {
     const user = userEvent.setup();
     render(<LandingNav />);
@@ -172,8 +186,11 @@ describe("motion and source content", () => {
     expect(document.querySelector("h2 [aria-hidden]")).toBeNull();
   });
   it("retains every supporter without duplicating UNB", () => {
-    expect(sponsors).toHaveLength(10);
-    expect(new Set(sponsors.map((item) => item.name)).size).toBe(10);
+    const sponsors = sponsorRows.flat();
+    expect(sponsorRows.map((row) => row.length)).toEqual([2, 2, 2, 2, 2, 3]);
+    expect(sponsors).toHaveLength(13);
+    expect(new Set(sponsors.map((item) => item.name)).size).toBe(13);
+    expect(sponsors.map((item) => item.name)).toEqual(expect.arrayContaining(["SmartSkin", "NordPass", "Introhive"]));
     expect(
       sponsors.filter((item) => item.name === "University of New Brunswick"),
     ).toHaveLength(1);

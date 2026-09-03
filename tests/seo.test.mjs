@@ -21,11 +21,16 @@ for (const directory of ["", "dist"]) {
 
     it("includes a descriptive title and one canonical URL in the HTML head", () => {
       assert.equal([...html.matchAll(/<title>/g)].length, 1);
+      assert.equal([...html.matchAll(/<head>/g)].length, 1);
+      assert.equal([...html.matchAll(/<body>/g)].length, 1);
       assert.ok(html.includes(`<title>${title}</title>`));
       assert.equal([...html.matchAll(/rel="canonical"/g)].length, 1);
       assert.ok(html.includes(`rel="canonical" href="${canonical}"`));
       assert.ok(html.indexOf('rel="canonical"') < html.indexOf("</head>"));
       assert.ok(meta("description").includes("student-run hackathon in Atlantic Canada"));
+      assert.ok(html.includes('rel="icon" type="image/png" href="/favicon.png"'));
+      assert.ok(html.includes('rel="apple-touch-icon" href="/favicon.png"'));
+      assert.ok(existsSync(resolve(publicRoot, "favicon.png")));
       assert.doesNotMatch(html, /noindex|name="keywords"|pk_live_|sk_live_/i);
     });
 
