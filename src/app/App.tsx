@@ -189,20 +189,7 @@ export default function App() {
           <section className="landing-faq" id="faq" aria-labelledby="faq-title">
             <div className="landing-container faq-grid">
               <div className="faq-intro">
-                <p className="eyebrow">Before you pack</p>
-                <h2 id="faq-title">
-                  Good questions.
-                  <br />
-                  Straight answers.
-                </h2>
-                <p>New to hackathons? You’re in good company.</p>
-                <a
-                  className="landing-text-link"
-                  href="mailto:team@hackatlantic.ca"
-                >
-                  Ask us something else{" "}
-                  <ArrowUpRight size={18} aria-hidden="true" />
-                </a>
+                <h2 id="faq-title">Frequently Asked Questions</h2>
               </div>
               <LandingFAQ />
             </div>
