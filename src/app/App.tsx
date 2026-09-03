@@ -128,7 +128,7 @@ export default function App() {
             <div className="landing-container">
               <div className="section-heading-row">
                 <div>
-                  <h2 id="sponsors-title">Our supporters.</h2>
+                  <h2 id="sponsors-title">Our Sponsors</h2>
                 </div>
               </div>
               <div className="sponsor-rows">

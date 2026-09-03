@@ -565,9 +565,10 @@ html {
 .section-heading-row {
   display: flex;
   align-items: end;
-  justify-content: space-between;
+  justify-content: center;
   gap: 40px;
   margin-bottom: 42px;
+  text-align: center;
 }
 .section-heading-row .eyebrow {
   color: #bbefd6;
