@@ -40,6 +40,13 @@ export function LandingNav() {
           ))}
         </div>
         <div className="nav-actions">
+          <img
+            className="nav-mlh-logo"
+            src="/mlh-logo-color.png"
+            alt="Major League Hacking"
+            width="96"
+            height="40"
+          />
           <ApplyLink compact />
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>

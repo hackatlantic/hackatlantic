@@ -1,6 +1,5 @@
 import {
   ArrowDown,
-  ArrowUpRight,
   Instagram,
   Linkedin,
   Mail,
@@ -58,17 +57,10 @@ export default function App() {
                 Hack Atlantic<span className="hero-title-dot">.</span>
               </h1>
               <p className="hero-description">
-                A weekend of building.
-                <br />A coast full of possibilities.
-              </p>
-              <p className="hero-support">
-                Atlantic Canada’s student-run hackathon.
-                <br />
-                Bring your ideas. Find your people. Make something real.
+                Atlantic Canada’s largest student-run hackathon.
               </p>
               <p className="hero-date">
                 <DrawnAccent>September 26–27</DrawnAccent>
-                <span>2026 · 24 hours</span>
               </p>
               <div className="hero-actions">
                 <ApplyLink />
@@ -76,21 +68,12 @@ export default function App() {
                   Explore the weekend <ArrowDown aria-hidden="true" size={18} />
                 </a>
               </div>
-              <p className="hero-note">
-                Free to attend. First-time hackers welcome.
-              </p>
             </div>
             <div className="hero-bottom landing-container">
               <span>
                 <Waves aria-hidden="true" size={18} /> Built by students.
                 Inspired by the Atlantic.
               </span>
-              <img
-                src="/mlh-logo-color.png"
-                alt="Major League Hacking"
-                width="96"
-                height="40"
-              />
             </div>
           </section>
 
