@@ -86,44 +86,25 @@ export default function App() {
                 <div>
                   <ScrollTitle
                     id="about-title"
-                    text="Big ideas start with a little curiosity."
+                    text="Welcome to Atlantic Canada’s largest hackathon."
                   />
-                  <p className="section-copy">
-                    Your first “Hello World” or your next ambitious prototype.
-                    There’s a place for both here.
-                  </p>
                 </div>
                 <Reveal className="about-copy">
                   <p>
-                    Spend 24 hours making something with people who are just as
-                    curious as you. Build a team, try unfamiliar tools, and turn
-                    an idea into a working project.
+                    This September, join 100+ hackers from the east coast and
+                    bring that idea you’ve pushed off to life. Grab a team of up
+                    to four, learn new tools, and turn a scrappy idea into a
+                    working version.
                   </p>
                   <p>
-                    We’ll bring the workshops, mentors, meals, and late-night
-                    snacks. You bring a laptop and a willingness to give it a
-                    go.
+                    Whether you’re writing your first ‘Hello World’ or building
+                    the next big startup, we’ve got a spot for you. Hack
+                    Atlantic will bring workshops, mentorship, connections with
+                    some of the best in the industry, and unforgettable
+                    experiences.
                   </p>
-                  <a className="landing-text-link" href="#faq">
-                    First hackathon? Start here{" "}
-                    <ArrowDown aria-hidden="true" size={18} />
-                  </a>
                 </Reveal>
               </div>
-              <dl className="weekend-facts">
-                <div>
-                  <dt>Time to build</dt>
-                  <dd>24 hours</dd>
-                </div>
-                <div>
-                  <dt>Your team</dt>
-                  <dd>1–4 people</dd>
-                </div>
-                <div>
-                  <dt>Experience needed</dt>
-                  <dd>Just curiosity</dd>
-                </div>
-              </dl>
             </div>
             <figure className="gros-scene">
               <ScenicLayer>
