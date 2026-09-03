@@ -11,7 +11,24 @@ const links = [
 
 export function LandingNav() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const destination = useRef<string | null>(null);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    const updateVisibility = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY.current;
+      setHidden(scrollingDown && currentScrollY > 120);
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateVisibility);
+  }, []);
+
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 900px)");
     const closeOnDesktop = () => {
@@ -22,7 +39,7 @@ export function LandingNav() {
   }, []);
 
   return (
-    <header className="landing-header">
+    <header className={`landing-header${hidden && !open ? " is-hidden" : ""}`}>
       <nav className="landing-nav" aria-label="Main navigation">
         <div className="desktop-nav-links">
           {links.map(({ label, id }) => (
