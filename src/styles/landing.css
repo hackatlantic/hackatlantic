@@ -590,17 +590,17 @@ html {
     linear-gradient(#fff, #fff) padding-box,
     repeating-linear-gradient(
         95deg,
-        rgba(255, 255, 255, 0.13) 0 8px,
-        rgba(92, 43, 18, 0.13) 8px 15px
+        rgba(242, 223, 196, 0.12) 0 8px,
+        rgba(48, 29, 18, 0.16) 8px 15px
       )
       border-box,
-    linear-gradient(135deg, #a9682c 0%, #d99a49 34%, #7a3f1e 68%, #b87532 100%)
+    linear-gradient(135deg, #5b3b28 0%, #8a6848 34%, #352317 68%, #6d4a31 100%)
       border-box;
   border: 12px solid transparent;
   border-radius: 9px;
   box-shadow:
-    inset 0 0 0 1px rgba(85, 42, 18, 0.4),
-    inset 0 0 18px rgba(114, 58, 23, 0.16),
+    inset 0 0 0 1px rgba(46, 28, 18, 0.48),
+    inset 0 0 18px rgba(52, 31, 18, 0.18),
     0 13px 24px rgba(4, 17, 28, 0.24);
   display: flex;
   align-items: center;
@@ -619,14 +619,14 @@ html {
 .sponsor-tile::before {
   z-index: -1;
   background:
-    linear-gradient(90deg, transparent 0 12px, rgba(65, 31, 13, 0.42) 12px 13px, transparent 13px calc(100% - 13px), rgba(65, 31, 13, 0.42) calc(100% - 13px) calc(100% - 12px), transparent calc(100% - 12px)),
-    linear-gradient(0deg, transparent 0 12px, rgba(255, 221, 143, 0.38) 12px 13px, transparent 13px calc(100% - 13px), rgba(65, 31, 13, 0.38) calc(100% - 13px) calc(100% - 12px), transparent calc(100% - 12px));
+    linear-gradient(90deg, transparent 0 12px, rgba(38, 24, 16, 0.5) 12px 13px, transparent 13px calc(100% - 13px), rgba(38, 24, 16, 0.5) calc(100% - 13px) calc(100% - 12px), transparent calc(100% - 12px)),
+    linear-gradient(0deg, transparent 0 12px, rgba(204, 174, 130, 0.32) 12px 13px, transparent 13px calc(100% - 13px), rgba(38, 24, 16, 0.44) calc(100% - 13px) calc(100% - 12px), transparent calc(100% - 12px));
 }
 .sponsor-tile::after {
   z-index: 1;
   box-shadow:
-    inset 0 2px 0 rgba(255, 226, 167, 0.42),
-    inset 0 -2px 0 rgba(78, 36, 14, 0.36);
+    inset 0 2px 0 rgba(218, 192, 154, 0.35),
+    inset 0 -2px 0 rgba(38, 24, 16, 0.42);
 }
 .sponsor-tile img {
   display: block;
