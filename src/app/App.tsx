@@ -62,7 +62,7 @@ export default function App() {
                 <span className="hero-date-stack">
                   <DrawnAccent>September 26–27</DrawnAccent>
                   <span className="mlh-event-label">
-                    <strong>MLH</strong> Official Member
+                    <strong>MLH</strong> Event
                   </span>
                 </span>
                 <span>· In-person event</span>
