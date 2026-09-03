@@ -443,10 +443,15 @@ html {
   flex-direction: column;
   gap: 5px;
 }
-.hero-date-stack > span:last-child {
-  color: #e0e9ed;
+.mlh-event-label {
+  color: #ee321f;
   font-size: 1.08rem;
-  line-height: 1.1;
+  font-weight: 500;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+.mlh-event-label strong {
+  font-weight: 800;
 }
 .hero-date > span:last-child {
   padding-top: 3px;
