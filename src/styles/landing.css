@@ -118,6 +118,7 @@ html {
   position: relative;
   padding-block: 12px;
   color: #fffdf4;
+  font-size: 1.08rem;
   font-weight: 700;
   text-shadow: 0 2px 12px rgba(6, 20, 35, 0.48);
 }
@@ -149,8 +150,8 @@ html {
 .desktop-social-links a {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   color: #fffdf4;
   text-shadow: 0 2px 12px rgba(6, 20, 35, 0.48);
   transition:
