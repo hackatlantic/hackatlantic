@@ -163,6 +163,17 @@ export default function App() {
             </div>
           </section>
 
+          <section
+            className="landing-judges"
+            id="judges"
+            aria-labelledby="judges-title"
+          >
+            <div className="landing-container judges-content">
+              <h2 id="judges-title">Judges</h2>
+              <p>Coming soon.</p>
+            </div>
+          </section>
+
           <figure
             className="bridge-scene"
             aria-label="Illustration of Confederation Bridge across the Atlantic water"

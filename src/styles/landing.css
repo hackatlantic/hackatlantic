@@ -625,6 +625,21 @@ html {
 .sponsor-contact a {
   color: #bbefd6;
 }
+.landing-judges {
+  padding: 0 0 96px;
+  color: #f7f5eb;
+  background: #102634;
+}
+.judges-content {
+  text-align: center;
+}
+.judges-content h2 {
+  margin-bottom: 10px;
+}
+.judges-content p {
+  color: #d0e0e5;
+  font-size: 1rem;
+}
 .bridge-scene {
   position: relative;
   background: #102634;
