@@ -593,22 +593,10 @@ html {
 .sponsor-tile {
   position: relative;
   isolation: isolate;
-  background:
-    linear-gradient(#fff, #fff) padding-box,
-    repeating-linear-gradient(
-        96deg,
-        rgba(235, 203, 154, 0.16) 0 9px,
-        rgba(48, 29, 18, 0.18) 9px 16px
-      )
-      border-box,
-    linear-gradient(135deg, #62422d 0%, #8b6b4e 34%, #3b281d 68%, #735238 100%)
-      border-box;
-  border: 14px solid transparent;
+  background: #fff;
+  border: 14px solid #6d4a31;
   border-radius: 10px;
-  box-shadow:
-    inset 0 0 0 1px rgba(49, 31, 21, 0.5),
-    inset 0 0 18px rgba(52, 31, 18, 0.16),
-    0 14px 26px rgba(4, 17, 28, 0.24);
+  box-shadow: 0 14px 26px rgba(4, 17, 28, 0.24);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -616,26 +604,6 @@ html {
   height: 136px;
   padding: 0;
   overflow: hidden;
-}
-.sponsor-tile::before,
-.sponsor-tile::after {
-  content: "";
-  position: absolute;
-  inset: -14px;
-  border-radius: inherit;
-  pointer-events: none;
-}
-.sponsor-tile::before {
-  z-index: -1;
-  background:
-    linear-gradient(90deg, transparent 0 14px, rgba(38, 24, 16, 0.5) 14px 15px, transparent 15px calc(100% - 15px), rgba(38, 24, 16, 0.5) calc(100% - 15px) calc(100% - 14px), transparent calc(100% - 14px)),
-    linear-gradient(0deg, transparent 0 14px, rgba(210, 178, 132, 0.34) 14px 15px, transparent 15px calc(100% - 15px), rgba(38, 24, 16, 0.42) calc(100% - 15px) calc(100% - 14px), transparent calc(100% - 14px));
-}
-.sponsor-tile::after {
-  z-index: 1;
-  box-shadow:
-    inset 0 2px 0 rgba(222, 190, 145, 0.34),
-    inset 0 -2px 0 rgba(38, 24, 16, 0.38);
 }
 .sponsor-tile img {
   display: block;
