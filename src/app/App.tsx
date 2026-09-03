@@ -5,6 +5,7 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
+import type { CSSProperties } from "react";
 import { MotionConfig } from "motion/react";
 import skyBackground from "../imports/skybackground.png";
 import grosMorne from "../imports/grosmorne-1.png";
@@ -19,7 +20,7 @@ import {
   ScrollTitle,
   ScenicLayer,
 } from "./components/landing/LandingMotion";
-import { sponsors } from "./components/landing/content";
+import { sponsorRows } from "./components/landing/content";
 import "../styles/landing.css";
 
 export default function App() {
@@ -135,16 +136,24 @@ export default function App() {
                   life.
                 </p>
               </div>
-              <div className="sponsor-grid">
-                {sponsors.map((sponsor) => (
-                  <div className="sponsor-tile" key={sponsor.name}>
-                    <img
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      loading="lazy"
-                      width="220"
-                      height="96"
-                    />
+              <div className="sponsor-rows">
+                {sponsorRows.map((row) => (
+                  <div
+                    className="sponsor-row"
+                    style={{ "--sponsor-count": row.length } as CSSProperties}
+                    key={row.map((sponsor) => sponsor.name).join("-")}
+                  >
+                    {row.map((sponsor) => (
+                      <div className="sponsor-tile" key={sponsor.name}>
+                        <img
+                          src={sponsor.image}
+                          alt={sponsor.name}
+                          loading="lazy"
+                          width="220"
+                          height="96"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
