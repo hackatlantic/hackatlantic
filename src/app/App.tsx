@@ -128,13 +128,8 @@ export default function App() {
             <div className="landing-container">
               <div className="section-heading-row">
                 <div>
-                  <p className="eyebrow">Made possible together</p>
                   <h2 id="sponsors-title">Our supporters.</h2>
                 </div>
-                <p>
-                  Thank you to the organizations helping bring Hack Atlantic to
-                  life.
-                </p>
               </div>
               <div className="sponsor-rows">
                 {sponsorRows.map((row) => (
