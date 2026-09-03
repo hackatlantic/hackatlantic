@@ -37,7 +37,7 @@ export function LandingNav() {
               href="mailto:team@hackatlantic.ca"
               aria-label="Email Hack Atlantic"
             >
-              <Mail size={22} />
+              <Mail size={20} />
             </a>
             <a
               href="https://www.instagram.com/hackatlantic"
@@ -45,7 +45,7 @@ export function LandingNav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Instagram size={22} />
+              <Instagram size={20} />
             </a>
             <a
               href="https://www.linkedin.com/company/hack-atlantic/"
@@ -53,7 +53,7 @@ export function LandingNav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin size={22} />
+              <Linkedin size={20} />
             </a>
           </div>
           <Dialog.Root open={open} onOpenChange={setOpen}>
