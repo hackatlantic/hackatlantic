@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X, ArrowUpRight, Instagram, Linkedin, Mail } from "lucide-react";
-import { ApplyLink } from "./LandingMotion";
 import { APPLICATION_URL } from "./content";
 
 const links = [
@@ -25,13 +24,6 @@ export function LandingNav() {
   return (
     <header className="landing-header">
       <nav className="landing-nav" aria-label="Main navigation">
-        <a
-          className="landing-wordmark"
-          href="#top"
-          aria-label="Hack Atlantic home"
-        >
-          Hack Atlantic
-        </a>
         <div className="desktop-nav-links">
           {links.map(({ label, id }) => (
             <a key={id} href={`#${id}`}>
@@ -40,14 +32,30 @@ export function LandingNav() {
           ))}
         </div>
         <div className="nav-actions">
-          <img
-            className="nav-mlh-logo"
-            src="/mlh-logo-color.png"
-            alt="Major League Hacking"
-            width="96"
-            height="40"
-          />
-          <ApplyLink compact />
+          <div className="desktop-social-links">
+            <a
+              href="mailto:team@hackatlantic.ca"
+              aria-label="Email Hack Atlantic"
+            >
+              <Mail size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/hackatlantic"
+              aria-label="Hack Atlantic on Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/hack-atlantic/"
+              aria-label="Hack Atlantic on LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
               <button

@@ -104,33 +104,22 @@ html {
   gap: 28px;
   width: min(1240px, calc(100% - 64px));
   margin-inline: auto;
-  padding: 13px 18px 13px 25px;
-  min-height: 72px;
-  border: 1px solid #fff9;
-  border-radius: 18px;
-  background: #f7f5ebf5;
-  color: var(--ink);
-}
-.landing-wordmark {
-  display: inline-block;
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  white-space: nowrap;
-  line-height: 1.2;
-}
-.landing-wordmark span {
-  color: #087d71;
+  padding: 0;
+  min-height: 54px;
+  color: #fffdf4;
 }
 .desktop-nav-links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 32px;
 }
 .desktop-nav-links a {
   position: relative;
   padding-block: 12px;
+  color: #fffdf4;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(6, 20, 35, 0.48);
 }
 .desktop-nav-links a::after {
   content: "";
@@ -138,7 +127,7 @@ html {
   height: 2px;
   inset-inline: 0;
   bottom: 8px;
-  background: #087d71;
+  background: #bbefd6;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 180ms;
@@ -152,14 +141,32 @@ html {
   align-items: center;
   gap: 10px;
 }
-.nav-mlh-logo {
-  display: block;
-  width: 74px;
-  height: 32px;
-  object-fit: contain;
-  background: #fff;
-  padding: 6px;
-  border-radius: 4px;
+.desktop-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.desktop-social-links a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #fffdf4;
+  border: 1px solid rgba(255, 253, 244, 0.58);
+  border-radius: 50%;
+  background: rgba(7, 25, 41, 0.28);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(5, 18, 32, 0.18);
+  transition:
+    background-color 180ms,
+    border-color 180ms,
+    transform 180ms;
+}
+.desktop-social-links a:hover,
+.desktop-social-links a:focus-visible {
+  background: rgba(187, 239, 214, 0.2);
+  border-color: #bbefd6;
+  transform: translateY(-1px);
 }
 .landing-button {
   display: inline-flex;
@@ -879,6 +886,9 @@ html {
   .desktop-nav-links {
     display: none;
   }
+  .desktop-social-links {
+    display: none;
+  }
   .menu-trigger {
     display: flex;
   }
@@ -940,13 +950,10 @@ html {
   }
   .landing-nav {
     width: calc(100% - 24px);
-    padding: 10px 11px 10px 14px;
-    min-height: 66px;
+    padding: 0;
+    min-height: 44px;
     gap: 7px;
     border-radius: 13px;
-  }
-  .landing-nav .landing-wordmark {
-    font-size: 1.15rem;
   }
   .landing-button.compact {
     padding: 10px 12px;
@@ -955,14 +962,13 @@ html {
   .nav-actions {
     gap: 7px;
   }
-  .nav-mlh-logo {
-    width: 58px;
-    height: 28px;
-    padding: 5px;
-  }
   .menu-trigger {
     width: 42px;
     height: 44px;
+    color: #fffdf4;
+    border-color: rgba(255, 253, 244, 0.58);
+    background: rgba(7, 25, 41, 0.28);
+    backdrop-filter: blur(8px);
   }
   .landing-hero {
     min-height: max(780px, 100svh);
