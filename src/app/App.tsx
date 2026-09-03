@@ -1,5 +1,6 @@
 import {
   ArrowDown,
+  ArrowUpRight,
   Instagram,
   Linkedin,
   Mail,
