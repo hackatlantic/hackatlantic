@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X, ArrowUpRight, Instagram, Linkedin, Mail } from "lucide-react";
-import { ApplyLink } from "./LandingMotion";
 import { APPLICATION_URL } from "./content";
 
 const links = [
@@ -12,7 +11,24 @@ const links = [
 
 export function LandingNav() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const destination = useRef<string | null>(null);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    const updateVisibility = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY.current;
+      setHidden(scrollingDown && currentScrollY > 120);
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateVisibility);
+  }, []);
+
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 900px)");
     const closeOnDesktop = () => {
@@ -23,15 +39,8 @@ export function LandingNav() {
   }, []);
 
   return (
-    <header className="landing-header">
+    <header className={`landing-header${hidden && !open ? " is-hidden" : ""}`}>
       <nav className="landing-nav" aria-label="Main navigation">
-        <a
-          className="landing-wordmark"
-          href="#top"
-          aria-label="Hack Atlantic home"
-        >
-          Hack Atlantic<span>.</span>
-        </a>
         <div className="desktop-nav-links">
           {links.map(({ label, id }) => (
             <a key={id} href={`#${id}`}>
@@ -40,7 +49,30 @@ export function LandingNav() {
           ))}
         </div>
         <div className="nav-actions">
-          <ApplyLink compact />
+          <div className="desktop-social-links">
+            <a
+              href="mailto:team@hackatlantic.ca"
+              aria-label="Email Hack Atlantic"
+            >
+              <Mail size={22} />
+            </a>
+            <a
+              href="https://www.instagram.com/hackatlantic"
+              aria-label="Hack Atlantic on Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/hack-atlantic/"
+              aria-label="Hack Atlantic on LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={22} />
+            </a>
+          </div>
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
               <button

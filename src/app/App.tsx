@@ -4,8 +4,8 @@ import {
   Instagram,
   Linkedin,
   Mail,
-  Waves,
 } from "lucide-react";
+import type { CSSProperties } from "react";
 import { MotionConfig } from "motion/react";
 import skyBackground from "../imports/skybackground.png";
 import grosMorne from "../imports/grosmorne-1.png";
@@ -20,8 +20,7 @@ import {
   ScrollTitle,
   ScenicLayer,
 } from "./components/landing/LandingMotion";
-import { CoastPostcard } from "./components/landing/CoastPostcard";
-import { sponsors } from "./components/landing/content";
+import { sponsorRows } from "./components/landing/content";
 import "../styles/landing.css";
 
 export default function App() {
@@ -55,20 +54,19 @@ export default function App() {
                 <span className="status-dot" /> Applications are open
               </p>
               <h1 id="hero-title">
-                Hack Atlantic<span className="hero-title-dot">.</span>
+                Hack Atlantic
               </h1>
               <p className="hero-description">
-                A weekend of building.
-                <br />A coast full of possibilities.
-              </p>
-              <p className="hero-support">
-                Atlantic Canada’s student-run hackathon.
-                <br />
-                Bring your ideas. Find your people. Make something real.
+                Atlantic Canada’s largest student-run hackathon.
               </p>
               <p className="hero-date">
-                <DrawnAccent>September 26–27</DrawnAccent>
-                <span>2026 · 24 hours</span>
+                <span className="hero-date-stack">
+                  <DrawnAccent>September 26–27</DrawnAccent>
+                  <span className="mlh-event-label">
+                    <strong>MLH</strong> Event
+                  </span>
+                </span>
+                <span>· In-person event</span>
               </p>
               <div className="hero-actions">
                 <ApplyLink />
@@ -76,21 +74,6 @@ export default function App() {
                   Explore the weekend <ArrowDown aria-hidden="true" size={18} />
                 </a>
               </div>
-              <p className="hero-note">
-                Free to attend. First-time hackers welcome.
-              </p>
-            </div>
-            <div className="hero-bottom landing-container">
-              <span>
-                <Waves aria-hidden="true" size={18} /> Built by students.
-                Inspired by the Atlantic.
-              </span>
-              <img
-                src="/mlh-logo-color.png"
-                alt="Major League Hacking"
-                width="96"
-                height="40"
-              />
             </div>
           </section>
 
@@ -100,49 +83,29 @@ export default function App() {
             aria-labelledby="about-title"
           >
             <div className="landing-container">
-              <p className="eyebrow">The weekend</p>
               <div className="about-grid">
                 <div>
                   <ScrollTitle
                     id="about-title"
-                    text="Big ideas start with a little curiosity."
+                    text="Welcome to Atlantic Canada’s largest hackathon."
                   />
-                  <p className="section-copy">
-                    Your first “Hello World” or your next ambitious prototype.
-                    There’s a place for both here.
-                  </p>
                 </div>
                 <Reveal className="about-copy">
                   <p>
-                    Spend 24 hours making something with people who are just as
-                    curious as you. Build a team, try unfamiliar tools, and turn
-                    an idea into a working project.
+                    This September, join 100+ hackers from the east coast and
+                    bring that idea you’ve pushed off to life. Grab a team of up
+                    to four, learn new tools, and turn a scrappy idea into a
+                    working version.
                   </p>
                   <p>
-                    We’ll bring the workshops, mentors, meals, and late-night
-                    snacks. You bring a laptop and a willingness to give it a
-                    go.
+                    Whether you’re writing your first ‘Hello World’ or building
+                    the next big startup, we’ve got a spot for you. Hack
+                    Atlantic will bring workshops, mentorship, connections with
+                    some of the best in the industry, and unforgettable
+                    experiences.
                   </p>
-                  <a className="landing-text-link" href="#faq">
-                    First hackathon? Start here{" "}
-                    <ArrowDown aria-hidden="true" size={18} />
-                  </a>
                 </Reveal>
               </div>
-              <dl className="weekend-facts">
-                <div>
-                  <dt>Time to build</dt>
-                  <dd>24 hours</dd>
-                </div>
-                <div>
-                  <dt>Your team</dt>
-                  <dd>1–4 people</dd>
-                </div>
-                <div>
-                  <dt>Experience needed</dt>
-                  <dd>Just curiosity</dd>
-                </div>
-              </dl>
             </div>
             <figure className="gros-scene">
               <ScenicLayer>
@@ -165,29 +128,31 @@ export default function App() {
             <div className="landing-container">
               <div className="section-heading-row">
                 <div>
-                  <p className="eyebrow">Made possible together</p>
-                  <h2 id="sponsors-title">Our supporters.</h2>
+                  <h2 id="sponsors-title">Our Sponsors</h2>
                 </div>
-                <p>
-                  Thank you to the organizations helping bring Hack Atlantic to
-                  life.
-                </p>
               </div>
-              <div className="sponsor-grid">
-                {sponsors.map((sponsor) => (
-                  <div className="sponsor-tile" key={sponsor.name}>
-                    <img
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      loading="lazy"
-                      width="220"
-                      height="96"
-                    />
+              <div className="sponsor-rows">
+                {sponsorRows.map((row) => (
+                  <div
+                    className="sponsor-row"
+                    style={{ "--sponsor-count": row.length } as CSSProperties}
+                    key={row.map((sponsor) => sponsor.name).join("-")}
+                  >
+                    {row.map((sponsor) => (
+                      <div className="sponsor-tile" key={sponsor.name}>
+                        <img
+                          src={sponsor.image}
+                          alt={sponsor.name}
+                          loading="lazy"
+                          width="220"
+                          height="96"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
               <div className="sponsor-contact">
-                <p>Want to support the next generation of builders?</p>
                 <a
                   className="landing-text-link"
                   href="mailto:team@hackatlantic.ca"
@@ -195,6 +160,17 @@ export default function App() {
                   Become a sponsor <ArrowUpRight size={18} aria-hidden="true" />
                 </a>
               </div>
+            </div>
+          </section>
+
+          <section
+            className="landing-judges"
+            id="judges"
+            aria-labelledby="judges-title"
+          >
+            <div className="landing-container judges-content">
+              <h2 id="judges-title">Judges</h2>
+              <p>Coming soon.</p>
             </div>
           </section>
 
@@ -224,40 +200,12 @@ export default function App() {
           <section className="landing-faq" id="faq" aria-labelledby="faq-title">
             <div className="landing-container faq-grid">
               <div className="faq-intro">
-                <p className="eyebrow">Before you pack</p>
-                <h2 id="faq-title">
-                  Good questions.
-                  <br />
-                  Straight answers.
-                </h2>
-                <p>New to hackathons? You’re in good company.</p>
-                <a
-                  className="landing-text-link"
-                  href="mailto:team@hackatlantic.ca"
-                >
-                  Ask us something else{" "}
-                  <ArrowUpRight size={18} aria-hidden="true" />
-                </a>
+                <h2 id="faq-title">Frequently Asked Questions</h2>
               </div>
               <LandingFAQ />
             </div>
           </section>
 
-          <section className="landing-finale" aria-labelledby="finale-title">
-            <div className="landing-container finale-grid">
-              <Reveal>
-                <p className="eyebrow">See you this September</p>
-                <h2 id="finale-title">
-                  Your next project
-                  <br />
-                  starts <DrawnAccent>here.</DrawnAccent>
-                </h2>
-                <p>One weekend. A new team. Something you made together.</p>
-                <ApplyLink />
-              </Reveal>
-              <CoastPostcard image="/photos/hopewellrocks.png" />
-            </div>
-          </section>
         </main>
         <footer className="landing-footer">
           <div className="landing-container footer-main">

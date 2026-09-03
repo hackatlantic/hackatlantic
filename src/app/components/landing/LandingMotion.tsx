@@ -6,7 +6,6 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
 import { APPLICATION_URL } from "./content";
 
 export function ApplyLink({ compact = false }: { compact?: boolean }) {
@@ -19,7 +18,7 @@ export function ApplyLink({ compact = false }: { compact?: boolean }) {
       whileTap={reduced ? undefined : { scale: 0.98 }}
       transition={{ duration: 0.16 }}
     >
-      Apply now <ArrowUpRight aria-hidden="true" size={compact ? 17 : 20} />
+      Apply
     </motion.a>
   );
 }

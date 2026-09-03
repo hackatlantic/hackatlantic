@@ -60,15 +60,30 @@ export const faqs = [
   },
 ];
 
-export const sponsors = [
-  { name: "Major League Hacking", image: "/mlh-logo-color.png" },
-  { name: "Bluebird Consulting", image: "/sponsor-bluebird.png" },
-  { name: "University of New Brunswick", image: "/sponsor-unb.png" },
-  { name: "Introhive", image: "/sponsor-introhive.png" },
-  { name: "Snowflake", image: "/sponsor-snowflake.png" },
-  { name: "Red Bull", image: "/sponsor-red-bull.png" },
-  { name: "Elaras Consulting Ltd", image: "/sponsor-elaras.png" },
-  { name: "NordVPN", image: "/sponsor-nordvpn.png" },
-  { name: "Incogni", image: "/sponsor-incogni.png" },
-  { name: "Saily", image: "/sponsor-saily.png" },
+export const sponsorRows = [
+  [
+    { name: "Major League Hacking", image: "/sponsors/mlh-sponsor-card.jpg" },
+    { name: "Snowflake", image: "/sponsors/snowflake-sponsor-card.jpg" },
+  ],
+  [
+    { name: "Bluebird Consulting", image: "/sponsors/bluebird-sponsor-card.jpg" },
+    { name: "Elaras Consulting", image: "/sponsors/elaras-sponsor-card.jpg" },
+  ],
+  [
+    { name: "Uride", image: "/sponsors/uride-sponsor-card.jpg" },
+    { name: "SmartSkin", image: "/sponsors/smartskin-sponsor-card.jpg" },
+  ],
+  [
+    { name: "NordVPN", image: "/sponsors/nordvpn-sponsor-card.jpg" },
+    { name: "NordPass", image: "/sponsors/nordpass-sponsor-card.jpg" },
+  ],
+  [
+    { name: "Incogni", image: "/sponsors/incogni-sponsor-card.jpg" },
+    { name: "Saily", image: "/sponsors/saily-sponsor-card.jpg" },
+  ],
+  [
+    { name: "Introhive", image: "/sponsors/introhive-sponsor-card.jpg" },
+    { name: "Red Bull", image: "/sponsors/red-bull-sponsor-card.jpg" },
+    { name: "University of New Brunswick", image: "/sponsors/unb-wordmark-sponsor-card.jpg" },
+  ],
 ];
