@@ -1,14 +1,21 @@
+import { useEffect } from "react";
+import { APPLICATION_URL } from "./components/landing/content";
+
 export default function ApplyPage() {
+  useEffect(() => {
+    window.location.replace(APPLICATION_URL);
+  }, []);
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Apply to Hack Atlantic
-        </h1>
-        <p className="text-lg text-gray-500">
-          Competitor applications coming soon.
-        </p>
-      </div>
-    </div>
+    <main
+      style={{
+        fontFamily: "Fredoka, sans-serif",
+        padding: "3rem",
+        color: "#152b3a",
+      }}
+    >
+      <h1>Applications are open</h1>
+      <p>Taking you to the Hack Atlantic application portal.</p>
+      <a href={APPLICATION_URL}>Continue to your application →</a>
+    </main>
   );
 }
