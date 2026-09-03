@@ -4,7 +4,6 @@ import {
   Instagram,
   Linkedin,
   Mail,
-  Waves,
 } from "lucide-react";
 import { MotionConfig } from "motion/react";
 import skyBackground from "../imports/skybackground.png";
@@ -55,7 +54,7 @@ export default function App() {
                 <span className="status-dot" /> Applications are open
               </p>
               <h1 id="hero-title">
-                Hack Atlantic<span className="hero-title-dot">.</span>
+                Hack Atlantic
               </h1>
               <p className="hero-description">
                 Atlantic Canada’s largest student-run hackathon.
@@ -69,12 +68,6 @@ export default function App() {
                   Explore the weekend <ArrowDown aria-hidden="true" size={18} />
                 </a>
               </div>
-            </div>
-            <div className="hero-bottom landing-container">
-              <span>
-                <Waves aria-hidden="true" size={18} /> Built by students.
-                Inspired by the Atlantic.
-              </span>
             </div>
           </section>
 

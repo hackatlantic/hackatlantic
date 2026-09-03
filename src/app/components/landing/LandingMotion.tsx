@@ -18,7 +18,7 @@ export function ApplyLink({ compact = false }: { compact?: boolean }) {
       whileTap={reduced ? undefined : { scale: 0.98 }}
       transition={{ duration: 0.16 }}
     >
-      Sign up
+      Apply
     </motion.a>
   );
 }

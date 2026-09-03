@@ -30,7 +30,7 @@ export function LandingNav() {
           href="#top"
           aria-label="Hack Atlantic home"
         >
-          Hack Atlantic<span>.</span>
+          Hack Atlantic
         </a>
         <div className="desktop-nav-links">
           {links.map(({ label, id }) => (
