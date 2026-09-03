@@ -153,7 +153,6 @@ export default function App() {
                 ))}
               </div>
               <div className="sponsor-contact">
-                <p>Want to support the next generation of builders?</p>
                 <a
                   className="landing-text-link"
                   href="mailto:team@hackatlantic.ca"
