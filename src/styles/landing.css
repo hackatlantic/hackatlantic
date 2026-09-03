@@ -430,14 +430,25 @@ html {
 }
 .hero-date {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 14px 16px;
   margin-top: 29px !important;
   font-size: 1.32rem;
   font-weight: 500;
 }
+.hero-date-stack {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.hero-date-stack > span:last-child {
+  color: #e0e9ed;
+  font-size: 1.08rem;
+  line-height: 1.1;
+}
 .hero-date > span:last-child {
+  padding-top: 3px;
   font-size: 1.08rem;
   color: #e0e9ed;
 }

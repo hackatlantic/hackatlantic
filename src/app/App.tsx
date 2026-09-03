@@ -60,7 +60,10 @@ export default function App() {
                 Atlantic Canada’s largest student-run hackathon.
               </p>
               <p className="hero-date">
-                <DrawnAccent>September 26–27</DrawnAccent>
+                <span className="hero-date-stack">
+                  <DrawnAccent>September 26–27</DrawnAccent>
+                  <span>MLH Event</span>
+                </span>
                 <span>· In-person event</span>
               </p>
               <div className="hero-actions">
