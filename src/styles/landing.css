@@ -432,9 +432,14 @@ html {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 14px 16px;
   margin-top: 29px !important;
   font-size: 1.32rem;
   font-weight: 500;
+}
+.hero-date > span:last-child {
+  font-size: 1.08rem;
+  color: #e0e9ed;
 }
 .drawn-accent {
   position: relative;

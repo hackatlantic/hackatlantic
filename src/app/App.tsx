@@ -61,6 +61,7 @@ export default function App() {
               </p>
               <p className="hero-date">
                 <DrawnAccent>September 26–27</DrawnAccent>
+                <span>· In-person event</span>
               </p>
               <div className="hero-actions">
                 <ApplyLink />
