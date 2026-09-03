@@ -82,7 +82,6 @@ export default function App() {
             aria-labelledby="about-title"
           >
             <div className="landing-container">
-              <p className="eyebrow">The weekend</p>
               <div className="about-grid">
                 <div>
                   <ScrollTitle
