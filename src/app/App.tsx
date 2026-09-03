@@ -1,305 +1,556 @@
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Instagram,
-  Linkedin,
-  Mail,
-  Waves,
-} from "lucide-react";
-import { MotionConfig } from "motion/react";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 import skyBackground from "../imports/skybackground.png";
 import grosMorne from "../imports/grosmorne-1.png";
 import confederationSky from "../imports/confederationsky.png";
 import confederationBridge from "../imports/confederationbridge-1.png";
-import { LandingNav } from "./components/landing/LandingNav";
-import { LandingFAQ } from "./components/landing/LandingFAQ";
-import {
-  ApplyLink,
-  DrawnAccent,
-  Reveal,
-  ScrollTitle,
-  ScenicLayer,
-} from "./components/landing/LandingMotion";
-import { CoastPostcard } from "./components/landing/CoastPostcard";
-import { sponsors } from "./components/landing/content";
-import "../styles/landing.css";
+import { useState, useEffect } from "react";
+import { toast, Toaster } from "sonner";
+import { supabase } from "../lib/supabase";
+
+const RATE_LIMIT_KEY = 'hackatlantic_last_signup_attempt';
+const RATE_LIMIT_MS = 60_000;
+
+function getRemainingCooldown(): number {
+  try {
+    const raw = localStorage.getItem(RATE_LIMIT_KEY);
+    if (!raw) return 0;
+    const elapsed = Date.now() - parseInt(raw, 10);
+    const remaining = RATE_LIMIT_MS - elapsed;
+    return remaining > 0 ? Math.ceil(remaining / 1000) : 0;
+  } catch {
+    return 0;
+  }
+}
 
 export default function App() {
+  const [email, setEmail] = useState("");
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const faqs = [
+    {
+      question: "What is a hackathon?",
+      answer:
+        "A hackathon is an event where students come together to build projects, learn new skills, and connect with other hackers. No experience required!",
+    },
+    {
+      question: "Who can attend?",
+      answer:
+        "High school/university students can attend.",
+    },
+    {
+      question: "How much does it cost?",
+      answer:
+        "Hack Atlantic is completely free! We'll provide meals, snacks, swag, and prizes throughout the weekend.",
+    },
+    {
+      question: "What should I bring?",
+      answer:
+        "Bring your laptop, chargers, sleeping bag, and deodorant..",
+    },
+    {
+      question: "Do I need a team?",
+      answer:
+        "Teams can be 1-4 people. Go solo, bring a team, or find one at the event!",
+    },
+    {
+      question: "What can I build?",
+      answer:
+        "Anything! We encourage you to build whatever you're passionate about. We will have a hardware and software category, as well as side prizes..",
+    },
+    {
+      question: "Is there travel support?",
+      answer:
+        "We are not able to offer travel reimbursements at this time.",
+    },
+    {
+      question: "What if I'm a beginner?",
+      answer:
+        "Perfect! We'll have workshops, mentors, and resources to help you learn and build your first project.",
+    },
+    {
+      question: "Will there be food?",
+      answer:
+        "Absolutely! We'll provide all meals, snacks, and drinks throughout the event. Dietary restrictions will be accommodated.",
+    },
+    {
+      question: "Can I work on existing projects?",
+      answer:
+        "All projects must be started from scratch at the hackathon. You can use libraries and frameworks, but the core work must be done during the event.",
+    },
+    {
+      question: "What are the prizes?",
+      answer:
+        "Prizes will be anounced closer to the event.",
+    },
+    {
+      question: "How long is the hackathon?",
+      answer:
+        "Hack Atlantic is a 24-hour hackathon, giving you plenty of time to build something amazing!",
+    },
+  ];
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () =>
+      window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const handleSubmit = async () => {
+    if (!email) return;
+    if (!supabase) {
+      toast.error('Email signup is not configured for this local preview.');
+      return;
+    }
+    const remaining = getRemainingCooldown();
+    if (remaining > 0) {
+      toast.error(`Please wait ${remaining} second${remaining === 1 ? '' : 's'} before trying again.`);
+      return;
+    }
+    setLoading(true);
+    try { localStorage.setItem(RATE_LIMIT_KEY, String(Date.now())); } catch {}
+    const { error } = await supabase.from('email_signups').insert({ email });
+    setLoading(false);
+    if (!error) {
+      toast.success("You're on the list! We'll notify you when applications open.");
+      setEmail('');
+    } else if (error.code === '23505') {
+      toast.error("You're already signed up!");
+    } else {
+      toast.error('Something went wrong, try again.');
+    }
+  };
+
   return (
-    <MotionConfig reducedMotion="user">
-      <div className="landing-page" id="top">
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
-        <LandingNav />
-        <main id="main" tabIndex={-1}>
-          <section className="landing-hero" aria-labelledby="hero-title">
-            <div className="hero-art" aria-hidden="true">
-              <img
-                className="hero-sky"
-                src={skyBackground}
-                alt=""
-                fetchPriority="high"
-              />
-              <ScenicLayer className="hero-rocks">
+    <div
+      className="size-full bg-slate-900 overflow-y-auto overflow-x-hidden scroll-smooth"
+      style={{ fontFamily: "Fredoka, sans-serif" }}
+    >
+      <Toaster position="bottom-center" richColors />
+
+      {/* Navigation */}
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
+        <div
+          className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-3 flex items-center justify-between"
+          style={{
+            backgroundColor: "rgba(255, 250, 245, 0.5)",
+          }}
+        >
+          <div className="flex items-center gap-6">
+            <a
+              href="#about"
+              className="text-gray-800 hover:text-blue-600 transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="#faq"
+              className="text-gray-800 hover:text-blue-600 transition-colors"
+            >
+              FAQ
+            </a>
+            <a
+              href="#sponsors"
+              className="text-gray-800 hover:text-blue-600 transition-colors"
+            >
+              Sponsors
+            </a>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="mailto:team@hackatlantic.ca"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <Mail size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/hackatlantic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/hack-atlantic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
+            <div className="ml-1 self-stretch border-l border-gray-900/20 pl-4">
+              <div
+                className="relative -mb-12 -mt-3 flex h-24 w-24 items-start justify-center bg-white px-3 pt-3 shadow-md"
+                style={{
+                  clipPath:
+                    "polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)",
+                }}
+              >
                 <img
-                  src="/photos/hopewellrocks.png"
-                  alt=""
-                  fetchPriority="high"
+                  src="/mlh-logo-color.png"
+                  alt="Major League Hacking"
+                  className="mt-2 h-7 w-auto"
                 />
-              </ScenicLayer>
-              <div className="hero-scrim" />
-            </div>
-            <div className="landing-container hero-content">
-              <p className="eyebrow hero-eyebrow">
-                <span className="status-dot" /> Applications are open
-              </p>
-              <h1 id="hero-title">
-                Hack Atlantic<span className="hero-title-dot">.</span>
-              </h1>
-              <p className="hero-description">
-                A weekend of building.
-                <br />A coast full of possibilities.
-              </p>
-              <p className="hero-support">
-                Atlantic Canada’s student-run hackathon.
-                <br />
-                Bring your ideas. Find your people. Make something real.
-              </p>
-              <p className="hero-date">
-                <DrawnAccent>September 26–27</DrawnAccent>
-                <span>2026 · 24 hours</span>
-              </p>
-              <div className="hero-actions">
-                <ApplyLink />
-                <a className="landing-text-link" href="#about">
-                  Explore the weekend <ArrowDown aria-hidden="true" size={18} />
-                </a>
               </div>
-              <p className="hero-note">
-                Free to attend. First-time hackers welcome.
-              </p>
             </div>
-            <div className="hero-bottom landing-container">
-              <span>
-                <Waves aria-hidden="true" size={18} /> Built by students.
-                Inspired by the Atlantic.
-              </span>
-              <img
-                src="/mlh-logo-color.png"
-                alt="Major League Hacking"
-                width="96"
-                height="40"
-              />
-            </div>
-          </section>
+          </div>
+        </div>
+      </nav>
 
-          <section
-            className="landing-about"
-            id="about"
-            aria-labelledby="about-title"
-          >
-            <div className="landing-container">
-              <p className="eyebrow">The weekend</p>
-              <div className="about-grid">
-                <div>
-                  <ScrollTitle
-                    id="about-title"
-                    text="Big ideas start with a little curiosity."
-                  />
-                  <p className="section-copy">
-                    Your first “Hello World” or your next ambitious prototype.
-                    There’s a place for both here.
-                  </p>
-                </div>
-                <Reveal className="about-copy">
-                  <p>
-                    Spend 24 hours making something with people who are just as
-                    curious as you. Build a team, try unfamiliar tools, and turn
-                    an idea into a working project.
-                  </p>
-                  <p>
-                    We’ll bring the workshops, mentors, meals, and late-night
-                    snacks. You bring a laptop and a willingness to give it a
-                    go.
-                  </p>
-                  <a className="landing-text-link" href="#faq">
-                    First hackathon? Start here{" "}
-                    <ArrowDown aria-hidden="true" size={18} />
-                  </a>
-                </Reveal>
-              </div>
-              <dl className="weekend-facts">
-                <div>
-                  <dt>Time to build</dt>
-                  <dd>24 hours</dd>
-                </div>
-                <div>
-                  <dt>Your team</dt>
-                  <dd>1–4 people</dd>
-                </div>
-                <div>
-                  <dt>Experience needed</dt>
-                  <dd>Just curiosity</dd>
-                </div>
-              </dl>
-            </div>
-            <figure className="gros-scene">
-              <ScenicLayer>
-                <img
-                  src={grosMorne}
-                  alt="An illustrated boat crossing the fjord at Gros Morne, between green cliffs."
-                  loading="lazy"
-                  width="1536"
-                  height="1024"
-                />
-              </ScenicLayer>
-            </figure>
-          </section>
+      {/* Hero Section */}
+      <div className="relative h-screen z-20">
+        {/* Sky Background Layer - fills full hero height */}
+        <div className="absolute inset-0">
+          <img
+            src={skyBackground}
+            alt="Sky Background"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center top" }}
+          />
+        </div>
 
-          <section
-            className="landing-sponsors"
-            id="sponsors"
-            aria-labelledby="sponsors-title"
-          >
-            <div className="landing-container">
-              <div className="section-heading-row">
-                <div>
-                  <p className="eyebrow">Made possible together</p>
-                  <h2 id="sponsors-title">Our supporters.</h2>
-                </div>
-                <p>
-                  Thank you to the organizations helping bring Hack Atlantic to
-                  life.
-                </p>
-              </div>
-              <div className="sponsor-grid">
-                {sponsors.map((sponsor) => (
-                  <div className="sponsor-tile" key={sponsor.name}>
-                    <img
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      loading="lazy"
-                      width="220"
-                      height="96"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="sponsor-contact">
-                <p>Want to support the next generation of builders?</p>
-                <a
-                  className="landing-text-link"
-                  href="mailto:team@hackatlantic.ca"
-                >
-                  Become a sponsor <ArrowUpRight size={18} aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <figure
-            className="bridge-scene"
-            aria-label="Illustration of Confederation Bridge across the Atlantic water"
+        {/* Hopewell Rocks */}
+        <div className="absolute inset-x-0 top-0 -bottom-[220px] z-30 overflow-hidden">
+          <div
+            className="absolute inset-0 transition-transform duration-200 ease-out"
+            style={{
+              transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+            }}
           >
             <img
-              className="bridge-sky"
-              src={confederationSky}
+              src="/photos/hopewellrocks.png"
               alt=""
-              loading="lazy"
-              width="1536"
-              height="1024"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: "center", transform: "scale(1.05)" }}
             />
-            <ScenicLayer className="bridge-layer">
-              <img
-                src={confederationBridge}
-                alt=""
-                loading="lazy"
-                width="1573"
-                height="1024"
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="absolute top-1/3 left-0 z-40 px-8 md:px-16">
+          <h1
+            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 whitespace-nowrap"
+            style={{
+              textShadow:
+                "0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3)",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Hack Atlantic
+          </h1>
+          <p
+            className="text-2xl md:text-3xl text-gray-800 mb-8 font-normal"
+            style={{
+              textShadow:
+                "0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.2)",
+            }}
+          >
+            Atlantic Canada's largest student run hackathon
+          </p>
+          <p
+            className="text-xl md:text-2xl text-gray-900 mb-6 font-semibold"
+            style={{
+              textShadow:
+                "0 0 8px rgba(255, 255, 255, 0.55), 0 0 15px rgba(255, 255, 255, 0.25)",
+            }}
+          >
+            Sep 26-27
+          </p>
+          <div className="flex flex-col items-start gap-3">
+            <p
+              className="text-xl text-gray-900 font-normal"
+              style={{
+                textShadow:
+                  "0 0 6px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.2)",
+              }}
+            >
+              Notify me when applications open
+            </p>
+            <div className="flex gap-2 w-full sm:w-auto">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+                placeholder="Enter your email"
+                className="backdrop-blur-md text-gray-900 px-6 py-3 rounded-lg shadow-lg border-2 border-gray-900/20 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-80"
+                style={{
+                  backgroundColor: "rgba(255, 250, 245, 0.5)",
+                }}
               />
-            </ScenicLayer>
-          </figure>
-
-          <section className="landing-faq" id="faq" aria-labelledby="faq-title">
-            <div className="landing-container faq-grid">
-              <div className="faq-intro">
-                <p className="eyebrow">Before you pack</p>
-                <h2 id="faq-title">
-                  Good questions.
-                  <br />
-                  Straight answers.
-                </h2>
-                <p>New to hackathons? You’re in good company.</p>
-                <a
-                  className="landing-text-link"
-                  href="mailto:team@hackatlantic.ca"
-                >
-                  Ask us something else{" "}
-                  <ArrowUpRight size={18} aria-hidden="true" />
-                </a>
-              </div>
-              <LandingFAQ />
-            </div>
-          </section>
-
-          <section className="landing-finale" aria-labelledby="finale-title">
-            <div className="landing-container finale-grid">
-              <Reveal>
-                <p className="eyebrow">See you this September</p>
-                <h2 id="finale-title">
-                  Your next project
-                  <br />
-                  starts <DrawnAccent>here.</DrawnAccent>
-                </h2>
-                <p>One weekend. A new team. Something you made together.</p>
-                <ApplyLink />
-              </Reveal>
-              <CoastPostcard image="/photos/hopewellrocks.png" />
-            </div>
-          </section>
-        </main>
-        <footer className="landing-footer">
-          <div className="landing-container footer-main">
-            <a className="landing-wordmark" href="#top">
-              Hack Atlantic<span>.</span>
-            </a>
-            <p>Student-built. Atlantic-inspired.</p>
-            <nav aria-label="Social links">
-              <a
-                href="mailto:team@hackatlantic.ca"
-                aria-label="Email Hack Atlantic"
+              <button
+                onClick={handleSubmit}
+                disabled={loading}
+                className="px-6 py-3 bg-gray-900 text-white rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50 font-medium whitespace-nowrap"
               >
-                <Mail />
-              </a>
-              <a
-                href="https://www.instagram.com/hackatlantic"
-                aria-label="Hack Atlantic on Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/hack-atlantic/"
-                aria-label="Hack Atlantic on LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin />
-              </a>
-            </nav>
-          </div>
-          <div className="landing-container footer-bottom">
-            <span>© 2026 Hack Atlantic</span>
-            <div>
-              <a href="https://apply.hackatlantic.ca/privacy">Privacy</a>
-              <a href="https://apply.hackatlantic.ca/terms">Terms</a>
-              <a href="#top">Back to top ↑</a>
+                {loading ? '...' : 'Notify Me'}
+              </button>
             </div>
           </div>
-        </footer>
+        </div>
       </div>
-    </MotionConfig>
+
+      {/* About Section */}
+      <section
+        id="about"
+        className="relative bg-[#4A1A1A] min-h-screen px-6 z-10"
+        style={{
+          marginTop: "clamp(-200px, calc(-150px - 0.092 * (100vw - 480px)), -150px)",
+          paddingTop: "clamp(400px, calc(400px + 0.184 * (100vw - 480px)), 500px)",
+          paddingBottom: "375px",
+        }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-5xl md:text-7xl font-bold text-center mb-12 text-white">
+            About Hack Atlantic
+          </h2>
+          <div className="text-xl md:text-2xl text-white/90 space-y-6 font-normal">
+            <p>
+              Hack Atlantic is Atlantic Canada's largest
+              student-run hackathon, where over 100 hackers will
+              compete for amazing prizes. Whether you're a
+              writing your first 'Hello World' or prototyping
+              the next billion dollar startup, we have a spot
+              for you!
+            </p>
+            <p>
+              Join us and expect workshops, a long night of
+              coding, lots of caffeine, and real projects.
+              You'll meet sponsors and employers who want to
+              support you as well as see what you're capable of.
+              
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Gros Morne Section */}
+      <section className="relative -mt-[170px] md:-mt-[230px] z-20">
+        <div
+          className="transition-transform duration-200 ease-out"
+          style={{
+            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+          }}
+        >
+          <img
+            src={grosMorne}
+            alt="Gros Morne"
+            className="w-full"
+            style={{
+              display: "block",
+              transform: "scale(1.05)",
+            }}
+          />
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section
+        id="sponsors"
+        className="relative bg-[#0A1628] min-h-screen py-20 px-6 -mt-[300px]"
+        style={{ paddingBottom: "400px" }}
+      >
+        <div className="max-w-3xl mx-auto mt-[300px]">
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-12 text-center">
+            Sponsors
+          </h2>
+
+          <div className="space-y-10 text-center">
+            <p className="text-xl md:text-2xl text-white/80 font-normal">
+              Thank you to the organizations supporting Hack Atlantic.
+            </p>
+
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/mlh-logo-color.png"
+                  alt="Major League Hacking"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-bluebird.png"
+                  alt="Bluebird Consulting"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-unb.png"
+                  alt="University of New Brunswick"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-introhive.png"
+                  alt="Introhive"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-snowflake.png"
+                  alt="Snowflake"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-unb-wordmark.jpg"
+                  alt="University of New Brunswick"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-red-bull.png"
+                  alt="Red Bull"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-elaras.png"
+                  alt="Elaras Consulting Ltd"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-nordvpn.png"
+                  alt="NordVPN"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-incogni.png"
+                  alt="Incogni"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex h-40 items-center justify-center rounded-lg bg-white px-8 py-6 shadow-2xl">
+                <img
+                  src="/sponsor-saily.png"
+                  alt="Saily"
+                  className="max-h-24 w-auto max-w-full object-contain"
+                />
+              </div>
+            </div>
+
+            <p className="text-base text-white/60 font-normal">
+              More sponsors will be announced soon.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Confederation Bridge Section */}
+      <section className="relative -mt-[150px] z-10">
+        {/* Sky Background Layer - Full Image */}
+        <img
+          src={confederationSky}
+          alt="Confederation Sky"
+          className="w-full"
+          style={{ display: "block" }}
+        />
+
+        {/* Bridge Layer with Parallax - Positioned Absolutely Over Sky */}
+        <div
+          className="absolute top-0 left-0 right-0 z-20 transition-transform duration-200 ease-out"
+          style={{
+            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+          }}
+        >
+          <img
+            src={confederationBridge}
+            alt="Confederation Bridge"
+            className="w-full"
+            style={{
+              display: "block",
+              transform: "scale(1.05)",
+            }}
+          />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section
+        className="relative bg-[#0D2818] min-h-screen py-20 px-6 -mt-[200px]"
+      >
+        <div className="max-w-3xl mx-auto mt-[175px]">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-white" id="faq">
+            Frequently Asked Questions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-4">
+              {faqs.slice(0, 6).map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-lg p-4 cursor-pointer transition-all hover:bg-white/15"
+                  onClick={() =>
+                    setOpenFAQ(openFAQ === index ? null : index)
+                  }
+                >
+                  <div className="flex justify-between items-start gap-3">
+                    <h3 className="text-lg font-bold text-white">
+                      {faq.question}
+                    </h3>
+                    <span className="text-white text-xl flex-shrink-0">
+                      {openFAQ === index ? "−" : "+"}
+                    </span>
+                  </div>
+                  {openFAQ === index && (
+                    <p className="mt-3 text-base text-white/80 font-normal">
+                      {faq.answer}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-4">
+              {faqs.slice(6, 12).map((faq, index) => (
+                <div
+                  key={index + 6}
+                  className="bg-white/10 backdrop-blur-md rounded-lg p-4 cursor-pointer transition-all hover:bg-white/15"
+                  onClick={() =>
+                    setOpenFAQ(
+                      openFAQ === index + 6 ? null : index + 6,
+                    )
+                  }
+                >
+                  <div className="flex justify-between items-start gap-3">
+                    <h3 className="text-lg font-bold text-white">
+                      {faq.question}
+                    </h3>
+                    <span className="text-white text-xl flex-shrink-0">
+                      {openFAQ === index + 6 ? "−" : "+"}
+                    </span>
+                  </div>
+                  {openFAQ === index + 6 && (
+                    <p className="mt-3 text-base text-white/80 font-normal">
+                      {faq.answer}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
