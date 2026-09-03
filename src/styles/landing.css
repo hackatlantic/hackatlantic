@@ -441,7 +441,7 @@ html {
 .hero-date-stack {
   display: inline-flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 11px;
 }
 .mlh-event-label {
   color: #fffdf4;
