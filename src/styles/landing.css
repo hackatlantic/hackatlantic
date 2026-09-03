@@ -730,29 +730,6 @@ html {
     height: 0;
   }
 }
-.landing-finale {
-  padding: 100px 0;
-  background: #f7f5eb;
-}
-.finale-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: center;
-  gap: 84px;
-}
-.finale-grid .eyebrow {
-  color: #477065;
-  margin-bottom: 22px;
-}
-.finale-grid p:not(.eyebrow) {
-  font-size: 1.12rem;
-  color: #465c60;
-  max-width: 33ch;
-  margin-top: 24px;
-}
-.finale-grid .landing-button {
-  margin-top: 30px;
-}
 .coast-postcard {
   position: relative;
   padding: 12px;
@@ -882,8 +859,7 @@ html {
 }
 @media (max-width: 1100px) {
   .about-grid,
-  .faq-grid,
-  .finale-grid {
+  .faq-grid {
     gap: 42px;
   }
   .landing-hero h1 {
@@ -910,8 +886,7 @@ html {
     width: calc(100% - 56px);
   }
   .about-grid,
-  .faq-grid,
-  .finale-grid {
+  .faq-grid {
     grid-template-columns: 1fr;
   }
   .about-grid {
@@ -921,15 +896,11 @@ html {
     max-width: 65ch;
   }
   .landing-about,
-  .landing-faq,
-  .landing-finale {
+  .landing-faq {
     padding-top: 70px;
   }
   .faq-grid {
     gap: 36px;
-  }
-  .finale-grid {
-    gap: 50px;
   }
   .coast-postcard {
     width: min(100% - 16px, 520px);
@@ -1105,9 +1076,6 @@ html {
   .faq-answer > div {
     font-size: 1rem;
     padding-right: 15px;
-  }
-  .landing-finale {
-    padding-block: 64px;
   }
   .footer-main {
     gap: 16px;

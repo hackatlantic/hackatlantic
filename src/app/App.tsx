@@ -19,7 +19,6 @@ import {
   ScrollTitle,
   ScenicLayer,
 } from "./components/landing/LandingMotion";
-import { CoastPostcard } from "./components/landing/CoastPostcard";
 import { sponsors } from "./components/landing/content";
 import "../styles/landing.css";
 
@@ -205,21 +204,6 @@ export default function App() {
             </div>
           </section>
 
-          <section className="landing-finale" aria-labelledby="finale-title">
-            <div className="landing-container finale-grid">
-              <Reveal>
-                <p className="eyebrow">See you this September</p>
-                <h2 id="finale-title">
-                  Your next project
-                  <br />
-                  starts <DrawnAccent>here.</DrawnAccent>
-                </h2>
-                <p>One weekend. A new team. Something you made together.</p>
-                <ApplyLink />
-              </Reveal>
-              <CoastPostcard image="/photos/hopewellrocks.png" />
-            </div>
-          </section>
         </main>
         <footer className="landing-footer">
           <div className="landing-container footer-main">
