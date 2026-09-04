@@ -62,6 +62,9 @@ export const faqs = [
 
 export const sponsorRows = [
   [
+    { name: "SnapTrade", image: "/sponsors/snaptrade-sponsor-card.jpg" },
+  ],
+  [
     { name: "Major League Hacking", image: "/sponsors/mlh-sponsor-card.jpg" },
     { name: "Snowflake", image: "/sponsors/snowflake-sponsor-card.jpg" },
   ],
