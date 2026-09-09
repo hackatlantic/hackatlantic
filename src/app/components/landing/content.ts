@@ -65,6 +65,9 @@ export const sponsorRows = [
     { name: "SnapTrade", image: "/sponsors/snaptrade-sponsor-card.jpg" },
   ],
   [
+    { name: "University of New Brunswick", image: "/sponsors/unb-wordmark-sponsor-card.jpg" },
+  ],
+  [
     { name: "Major League Hacking", image: "/sponsors/mlh-sponsor-card.jpg" },
     { name: "Snowflake", image: "/sponsors/snowflake-sponsor-card.jpg" },
   ],
@@ -87,6 +90,5 @@ export const sponsorRows = [
   [
     { name: "Introhive", image: "/sponsors/introhive-sponsor-card.jpg" },
     { name: "Red Bull", image: "/sponsors/red-bull-sponsor-card.jpg" },
-    { name: "University of New Brunswick", image: "/sponsors/unb-wordmark-sponsor-card.jpg" },
   ],
 ];

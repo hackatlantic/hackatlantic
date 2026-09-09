@@ -92,7 +92,7 @@ export default function App() {
                 </div>
                 <Reveal className="about-copy">
                   <p>
-                    This September, join 100+ hackers from the east coast and
+                    This September, join hackers from the east coast and
                     bring that idea you’ve pushed off to life. Grab a team of up
                     to four, learn new tools, and turn a scrappy idea into a
                     working version.
