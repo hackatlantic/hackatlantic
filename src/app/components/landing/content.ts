@@ -68,6 +68,9 @@ export const sponsorRows = [
     { name: "New Brunswick Innovation Foundation", image: "/sponsors/nbif-sponsor-card.png" },
   ],
   [
+    { name: "Gray Wolf Analytics", image: "/sponsors/gray-wolf-sponsor-card.png" },
+  ],
+  [
     { name: "University of New Brunswick", image: "/sponsors/unb-wordmark-sponsor-card.jpg" },
   ],
   [
