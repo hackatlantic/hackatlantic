@@ -66,7 +66,7 @@ export default function App() {
                     <strong>MLH</strong> Event
                   </span>
                 </span>
-                <span>· In-person event</span>
+                <span>· UNB Fredericton</span>
               </p>
               <div className="hero-actions">
                 <ApplyLink />

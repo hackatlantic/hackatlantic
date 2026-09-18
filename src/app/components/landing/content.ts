@@ -65,6 +65,12 @@ export const sponsorRows = [
     { name: "SnapTrade", image: "/sponsors/snaptrade-sponsor-card.jpg" },
   ],
   [
+    { name: "New Brunswick Innovation Foundation", image: "/sponsors/nbif-sponsor-card.png" },
+  ],
+  [
+    { name: "Gray Wolf Analytics", image: "/sponsors/gray-wolf-sponsor-card.png" },
+  ],
+  [
     { name: "University of New Brunswick", image: "/sponsors/unb-wordmark-sponsor-card.jpg" },
   ],
   [
