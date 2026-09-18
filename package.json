@@ -6,6 +6,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
+    "test:seo": "node --test tests/seo.test.mjs",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

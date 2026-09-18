@@ -8,4 +8,10 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
-  
+
+## Search metadata
+
+The homepage includes static search/social metadata and public crawler files.
+Run `npm run build` followed by `npm run test:seo` to verify source and built
+output. See [SEO setup and Search Console checklist](docs/SEO.md) for deployment
+verification and indexing steps. Search ranking is not guaranteed.
