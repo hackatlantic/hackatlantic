@@ -111,7 +111,7 @@ export function LandingNav() {
                   </Dialog.Close>
                 </div>
                 <Dialog.Description className="mobile-menu-description">
-                  September 26–27, 2026. Applications are open.
+                  Applications are closed for 2026. We’ll be back in 2027.
                 </Dialog.Description>
                 <nav aria-label="Mobile navigation">
                   {links.map(({ label, id }, index) => (

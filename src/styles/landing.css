@@ -403,6 +403,13 @@ html {
   font-weight: 450;
   white-space: nowrap;
 }
+.hero-application-notice {
+  max-width: 44rem;
+  margin-top: 16px !important;
+  color: #fffdf4;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.5;
+}
 .hero-date {
   display: flex;
   align-items: flex-start;

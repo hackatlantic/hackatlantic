@@ -3,6 +3,11 @@ export const APPLICATION_URL = "https://apply.hackatlantic.ca/";
 // Event details and supporters retained from the existing landing page.
 export const faqs = [
   {
+    question: "Can I still apply?",
+    answer:
+      "Applications for Hack Atlantic 2026 are now closed. Applications will reopen for our 2027 event. Follow our social channels for updates. If you already applied, you can still access your application, RSVP, and event pass through the applicant dashboard.",
+  },
+  {
     question: "What is a hackathon?",
     answer:
       "A hackathon is an event where students come together to build projects, learn new skills, and meet other hackers. No experience required!",

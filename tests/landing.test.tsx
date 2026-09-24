@@ -3,6 +3,8 @@ import { render, screen, within, waitFor, fireEvent } from "@testing-library/rea
 import userEvent from "@testing-library/user-event";
 import { LandingNav } from "../src/app/components/landing/LandingNav";
 import { LandingFAQ } from "../src/app/components/landing/LandingFAQ";
+import App from "../src/app/App";
+import ApplyPage from "../src/app/ApplyPage";
 import {
   DrawnAccent,
   ScrollTitle,
@@ -23,6 +25,21 @@ beforeEach(() => {
   preferences.reduced = true;
   Object.defineProperty(window, "scrollY", { configurable: true, value: 0 });
   window.history.replaceState(null, "", "/");
+});
+
+describe("closed application intake", () => {
+  it("announces closure and next year without restoring Apply calls to action", () => {
+    render(<App />);
+    expect(screen.getByText("Applications closed for 2026")).toBeVisible();
+    expect(screen.getByText(/Applications will reopen for our 2027 event/, {selector: ".hero-application-notice"})).toBeVisible();
+    expect(screen.queryByText("Applications are open")).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", {name:/^apply/i})).not.toBeInTheDocument();
+  });
+  it("keeps legacy apply visitors informed and existing applicants able to sign in", () => {
+    render(<ApplyPage />);
+    expect(screen.getByRole("heading", {name:"Applications are closed for 2026"})).toBeVisible();
+    expect(screen.getByRole("link", {name:/Open your applicant dashboard/})).toHaveAttribute("href", "https://apply.hackatlantic.ca/");
+  });
 });
 
 describe("mobile navigation", () => {
@@ -50,6 +67,7 @@ describe("mobile navigation", () => {
       within(dialog).getByRole("navigation", { name: "Mobile navigation" }),
     ).toBeVisible();
     expect(within(dialog).queryByRole("link", { name: /apply/i })).toBeNull();
+    expect(within(dialog).getByText(/Applications are closed for 2026/)).toBeVisible();
     expect(
       within(dialog).getByRole("button", { name: "Close navigation menu" }),
     ).toHaveFocus();
@@ -125,7 +143,7 @@ describe("FAQ", () => {
     const user = userEvent.setup();
     render(<LandingFAQ />);
     const question = screen.getByRole("button", {
-      name: "What is a hackathon?",
+      name: faqs[0].question,
     });
     question.focus();
     await user.keyboard("{Enter}");
@@ -164,10 +182,10 @@ describe("motion and source content", () => {
   });
   it("retains every supporter without duplicating UNB", () => {
     const sponsors = sponsorRows.flat();
-    expect(sponsorRows.map((row) => row.length)).toEqual([2, 2, 2, 2, 2, 3]);
-    expect(sponsors).toHaveLength(13);
-    expect(new Set(sponsors.map((item) => item.name)).size).toBe(13);
-    expect(sponsors.map((item) => item.name)).toEqual(expect.arrayContaining(["SmartSkin", "NordPass", "Introhive"]));
+    expect(sponsorRows.map((row) => row.length)).toEqual([1, 1, 1, 1, 2, 2, 2, 2, 2, 2]);
+    expect(sponsors).toHaveLength(16);
+    expect(new Set(sponsors.map((item) => item.name)).size).toBe(16);
+    expect(sponsors.map((item) => item.name)).toEqual(expect.arrayContaining(["SmartSkin", "NordPass", "Introhive", "SnapTrade", "New Brunswick Innovation Foundation", "Gray Wolf Analytics"]));
     expect(
       sponsors.filter((item) => item.name === "University of New Brunswick"),
     ).toHaveLength(1);
