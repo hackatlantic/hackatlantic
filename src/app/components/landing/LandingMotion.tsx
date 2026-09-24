@@ -6,23 +6,6 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { APPLICATION_URL } from "./content";
-
-export function ApplyLink({ compact = false }: { compact?: boolean }) {
-  const reduced = useReducedMotion();
-  return (
-    <motion.a
-      href={APPLICATION_URL}
-      className={`landing-button${compact ? " compact" : ""}`}
-      whileHover={reduced ? undefined : { y: -2 }}
-      whileTap={reduced ? undefined : { scale: 0.98 }}
-      transition={{ duration: 0.16 }}
-    >
-      Apply
-    </motion.a>
-  );
-}
-
 export function Reveal({
   children,
   className = "",
