@@ -50,13 +50,17 @@ export default function App() {
             </div>
             <div className="landing-container hero-content">
               <p className="eyebrow hero-eyebrow">
-                <span className="status-dot" /> Applications are open
+                Applications closed for 2026
               </p>
               <h1 id="hero-title">
                 Hack Atlantic
               </h1>
               <p className="hero-description">
                 Atlantic Canada’s largest student-run hackathon.
+              </p>
+              <p className="hero-application-notice">
+                Thanks for your interest! Applications will reopen for our 2027 event.
+                Follow us for next year’s updates.
               </p>
               <p className="hero-date">
                 <span className="hero-date-stack">
@@ -97,8 +101,7 @@ export default function App() {
                   </p>
                   <p>
                     Whether you’re writing your first ‘Hello World’ or building
-                    the next big startup, we’ve got a spot for you. Hack
-                    Atlantic will bring workshops, mentorship, connections with
+                    the next big startup, Hack Atlantic brings workshops, mentorship, connections with
                     some of the best in the industry, and unforgettable
                     experiences.
                   </p>
