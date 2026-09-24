@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X, ArrowUpRight, Instagram, Linkedin, Mail } from "lucide-react";
-import { APPLICATION_URL } from "./content";
 
 const links = [
   { label: "About", id: "about" },
@@ -131,9 +130,6 @@ export function LandingNav() {
                     </a>
                   ))}
                 </nav>
-                <a className="landing-button" href={APPLICATION_URL}>
-                  Apply now <ArrowUpRight size={20} aria-hidden="true" />
-                </a>
                 <div className="mobile-menu-social">
                   <a
                     href="mailto:team@hackatlantic.ca"

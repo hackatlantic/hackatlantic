@@ -4,16 +4,11 @@ import userEvent from "@testing-library/user-event";
 import { LandingNav } from "../src/app/components/landing/LandingNav";
 import { LandingFAQ } from "../src/app/components/landing/LandingFAQ";
 import {
-  ApplyLink,
   DrawnAccent,
   ScrollTitle,
 } from "../src/app/components/landing/LandingMotion";
 import { CoastPostcard } from "../src/app/components/landing/CoastPostcard";
-import {
-  APPLICATION_URL,
-  faqs,
-  sponsorRows,
-} from "../src/app/components/landing/content";
+import { faqs, sponsorRows } from "../src/app/components/landing/content";
 import {
   ditherColor,
   sampleCells,
@@ -30,22 +25,6 @@ beforeEach(() => {
   window.history.replaceState(null, "", "/");
 });
 
-describe("application links", () => {
-  it("points both button sizes at the production application portal", () => {
-    render(
-      <>
-        <ApplyLink />
-        <ApplyLink compact />
-      </>,
-    );
-    const links = screen.getAllByRole("link", { name: "Apply", exact: true });
-    expect(links).toHaveLength(2);
-    for (const link of links)
-      expect(link).toHaveAttribute("href", APPLICATION_URL);
-    expect(APPLICATION_URL).toBe("https://apply.hackatlantic.ca/");
-  });
-});
-
 describe("mobile navigation", () => {
   it("preserves Dax's hide-on-scroll-down and reveal-on-scroll-up behavior", () => {
     const { container } = render(<LandingNav />);
@@ -58,7 +37,7 @@ describe("mobile navigation", () => {
     fireEvent.scroll(window);
     expect(header).not.toHaveClass("is-hidden");
   });
-  it("opens a named modal with navigation and an Apply link", async () => {
+  it("opens a named modal with navigation and no Apply link", async () => {
     const user = userEvent.setup();
     render(<LandingNav />);
     await user.click(
@@ -70,9 +49,7 @@ describe("mobile navigation", () => {
     expect(
       within(dialog).getByRole("navigation", { name: "Mobile navigation" }),
     ).toBeVisible();
-    expect(
-      within(dialog).getByRole("link", { name: "Apply now" }),
-    ).toHaveAttribute("href", APPLICATION_URL);
+    expect(within(dialog).queryByRole("link", { name: /apply/i })).toBeNull();
     expect(
       within(dialog).getByRole("button", { name: "Close navigation menu" }),
     ).toHaveFocus();

@@ -173,38 +173,6 @@ html {
   color: #bbefd6;
   transform: translateY(-1px);
 }
-.landing-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 51px;
-  padding: 15px 23px 14px;
-  border: 1px solid #1de4d3;
-  border-radius: 8px;
-  background: #12c6b7;
-  color: #071f2b;
-  box-shadow: 0 6px 0 #087f82;
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  line-height: 1.1;
-  text-transform: uppercase;
-  transition:
-    background-color 180ms,
-    border-color 180ms,
-    box-shadow 180ms,
-    transform 180ms;
-}
-.landing-button:hover {
-  background: #18d9ca;
-  border-color: #4cf3e5;
-  box-shadow: 0 5px 0 #087f82;
-}
-.landing-button.compact {
-  min-height: 47px;
-  padding: 14px 19px 13px;
-  font-size: 0.78rem;
-}
 .landing-text-link {
   display: inline-flex;
   align-items: center;
@@ -301,10 +269,6 @@ html {
 .menu-index {
   color: #506a60;
   font-size: 0.9rem;
-}
-.mobile-menu .landing-button {
-  display: flex;
-  width: 100%;
 }
 .mobile-menu-social {
   display: flex;
@@ -491,9 +455,6 @@ html {
   flex-wrap: wrap;
   gap: 18px 28px;
   margin-top: 24px;
-}
-.hero-actions .landing-button {
-  min-width: 98px;
 }
 .landing-about {
   padding-top: 100px;
@@ -982,10 +943,6 @@ html {
     gap: 7px;
     border-radius: 13px;
   }
-  .landing-button.compact {
-    padding: 10px 12px;
-    font-size: 0.68rem;
-  }
   .nav-actions {
     gap: 7px;
   }
@@ -1026,9 +983,6 @@ html {
   .hero-actions {
     gap: 12px 22px;
     margin-top: 24px;
-  }
-  .hero-actions .landing-button {
-    min-width: 98px;
   }
   .hero-actions .landing-text-link {
     font-size: 0.97rem;

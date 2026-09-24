@@ -14,7 +14,6 @@ import confederationBridge from "../imports/confederationbridge-1.png";
 import { LandingNav } from "./components/landing/LandingNav";
 import { LandingFAQ } from "./components/landing/LandingFAQ";
 import {
-  ApplyLink,
   DrawnAccent,
   Reveal,
   ScrollTitle,
@@ -69,7 +68,6 @@ export default function App() {
                 <span>· UNB Fredericton</span>
               </p>
               <div className="hero-actions">
-                <ApplyLink />
                 <a className="landing-text-link" href="#about">
                   Explore the weekend <ArrowDown aria-hidden="true" size={18} />
                 </a>
