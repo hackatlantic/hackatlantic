@@ -53,9 +53,8 @@ export default function PhotoGalleryPage() {
       </header>
       <main>
         <div className="gallery-heading">
-          <p className="gallery-eyebrow">Hack Atlantic</p>
           <h1>Photo Gallery</h1>
-          <p className="gallery-subtitle">Saturday and Sunday <span aria-hidden="true">·</span> {photos.length} photos</p>
+          <p className="gallery-subtitle">{photos.length} photos</p>
         </div>
         <ul className="gallery-grid" id="gallery-photos" aria-label="Weekend photos" tabIndex={-1}>
           {photos.map((photo, index) => <PolaroidCard key={photo.id} photo={photo} index={index} onOpen={(event) => {

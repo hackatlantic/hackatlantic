@@ -18,10 +18,8 @@
 .gallery-socials { display: flex; align-items: center; gap: 16px; }
 .gallery-socials a { display: grid; place-items: center; width: 44px; height: 44px; }
 .gallery-heading { padding: 60px 0 68px; text-align: center; }
-.gallery-eyebrow { font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
-.gallery-page .gallery-heading h1 { font-size: clamp(48px, 5.6vw, 84px); font-weight: 800; line-height: 1; letter-spacing: -0.035em; margin: 16px 0 20px; }
+.gallery-page .gallery-heading h1 { font-size: clamp(48px, 5.6vw, 84px); font-weight: 800; line-height: 1; letter-spacing: -0.035em; margin: 0 0 20px; }
 .gallery-subtitle { font-size: 20px; }
-.gallery-subtitle span { margin-inline: 7px; }
 .gallery-page .gallery-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 56px 40px; list-style: none; padding: 12px 0 32px; }
 .gallery-item { min-width: 0; }
 .gallery-polaroid {

@@ -14,7 +14,7 @@ describe("complete photo gallery", () => {
     expect(new Set(sourceIds).size).toBe(inventory.photoCount);
     expect(cards).toHaveLength(49);
     expect(screen.getAllByRole("img")).toHaveLength(49);
-    expect(screen.getByText("Saturday and Sunday", { exact: false })).toHaveTextContent("49 photos");
+    expect(screen.getByText("49 photos", { exact: true })).toBeVisible();
     expect(photos.filter(photo => photo.album === "Saturday")).toHaveLength(20);
     expect(photos.filter(photo => photo.album === "Sunday")).toHaveLength(29);
   });
