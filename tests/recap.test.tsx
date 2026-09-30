@@ -103,6 +103,7 @@ describe("approved recap content", () => {
     expect(screen.getAllByRole("img", { name: /Hack Atlantic weekend/ })).toHaveLength(12);
     expect(screen.queryByRole("link", { name: "Photo album ↗" })).toBeNull();
     expect(screen.queryByRole("link", { name: "More photos ↗" })).toBeNull();
+    expect(screen.getByRole("link", { name: "Photo gallery" })).toHaveAttribute("href", "/photo-gallery");
   });
 
   it("preserves the ten project destinations and makes external links safe", () => {

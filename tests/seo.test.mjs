@@ -69,7 +69,7 @@ for (const directory of ["", "dist"]) {
       assert.ok(html.indexOf('type="application/ld+json"') < html.indexOf("</head>"));
     });
 
-    it("publishes crawler files pointing only at the canonical homepage", () => {
+    it("publishes crawler files for the homepage and complete photo gallery", () => {
       const robots = readFileSync(resolve(publicRoot, "robots.txt"), "utf8");
       assert.match(robots, /^User-agent: \*$/m);
       assert.match(robots, /^Allow: \/$/m);
@@ -77,8 +77,29 @@ for (const directory of ["", "dist"]) {
       assert.doesNotMatch(robots, /^Disallow: \/\s*$/m);
       const sitemap = readFileSync(resolve(publicRoot, "sitemap.xml"), "utf8");
       assert.match(sitemap, /xmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9"/);
-      assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]), [canonical]);
+      assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]), [canonical, `${canonical}photo-gallery`]);
       assert.doesNotMatch(sitemap, /localhost|vercel\.app|<lastmod>/);
     });
   });
 }
+
+describe("built photo gallery entry", () => {
+  const html = readFileSync(resolve(root, "dist/photo-gallery/index.html"), "utf8");
+  const metadata = JSON.parse(readFileSync(resolve(root, "src/app/components/gallery/metadata.json"), "utf8"));
+  it("serves the gallery title and canonical in the initial HTML", () => {
+    assert.ok(html.includes(`<title>${metadata.title}</title>`));
+    assert.ok(html.includes(`rel="canonical" href="${metadata.canonical}"`));
+    assert.ok(html.includes(`property="og:url" content="${metadata.canonical}"`));
+    assert.ok(html.includes(`name="description" content="${metadata.description}"`));
+    assert.ok(html.includes(`property="og:title" content="${metadata.title}"`));
+    assert.ok(html.includes(`name="twitter:title" content="${metadata.title}"`));
+    assert.doesNotMatch(html, /noindex|localhost|Orange recap/);
+  });
+  it("references built assets and has a direct production route", () => {
+    for (const match of html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)) {
+      assert.ok(existsSync(resolve(root, "dist", "." + match[1])));
+    }
+    const config = JSON.parse(readFileSync(resolve(root, "vercel.json"), "utf8"));
+    assert.ok(config.rewrites.some(rule => rule.source === "/photo-gallery" && rule.destination === "/photo-gallery/index.html"));
+  });
+});

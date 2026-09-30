@@ -1,0 +1,372 @@
+{
+  "checkedOn": "2026-09-29",
+  "status": "All originals downloaded; source ID sets rechecked against both folders before implementation",
+  "verification": "Image-only paginated search and unfiltered folder listing returned the same file IDs; neither search returned a next-page token. Folder-only searches returned no children.",
+  "photoCount": 49,
+  "totalSourceBytes": 308288461,
+  "albums": [
+    {
+      "folderId": "1fYRXdQMh9KY_jxa79B7JT-Tw_QLHkSjN",
+      "title": "HACKATHON - saturday",
+      "url": "https://drive.google.com/drive/folders/1fYRXdQMh9KY_jxa79B7JT-Tw_QLHkSjN",
+      "photoCount": 20,
+      "totalSourceBytes": 123007179,
+      "nestedFolderCount": 0,
+      "photos": [
+        {
+          "id": "1uV2Fw3zLNfPP6Yd2hxtqKBHhdV0CtuyU",
+          "name": "IMG_1497.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5546563,
+          "sourceUrl": "https://drive.google.com/file/d/1uV2Fw3zLNfPP6Yd2hxtqKBHhdV0CtuyU/view?usp=drivesdk"
+        },
+        {
+          "id": "1H-3D2EvlpYZf0E9S99t6t4bcBvK9f75B",
+          "name": "IMG_1500.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5433199,
+          "sourceUrl": "https://drive.google.com/file/d/1H-3D2EvlpYZf0E9S99t6t4bcBvK9f75B/view?usp=drivesdk"
+        },
+        {
+          "id": "195YGumdEKyVo7EeQ_5baoirBGZv_UMkA",
+          "name": "IMG_1503.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5758845,
+          "sourceUrl": "https://drive.google.com/file/d/195YGumdEKyVo7EeQ_5baoirBGZv_UMkA/view?usp=drivesdk"
+        },
+        {
+          "id": "1EMPBa6DhMblLlUDusgU8XmohfzL1mX5Q",
+          "name": "IMG_1509.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6491803,
+          "sourceUrl": "https://drive.google.com/file/d/1EMPBa6DhMblLlUDusgU8XmohfzL1mX5Q/view?usp=drivesdk"
+        },
+        {
+          "id": "1XbpPGNgCwOwIt9tMMj6numFfyOLKKeOJ",
+          "name": "IMG_1513.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6162674,
+          "sourceUrl": "https://drive.google.com/file/d/1XbpPGNgCwOwIt9tMMj6numFfyOLKKeOJ/view?usp=drivesdk"
+        },
+        {
+          "id": "15oH05xndlgDHVs5PHTbRksU0bat9gqt3",
+          "name": "IMG_1518.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6059840,
+          "sourceUrl": "https://drive.google.com/file/d/15oH05xndlgDHVs5PHTbRksU0bat9gqt3/view?usp=drivesdk"
+        },
+        {
+          "id": "1xJPNKQLDZezG8aCvTLEx6ggtWXtc8Y5e",
+          "name": "IMG_1522.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5671023,
+          "sourceUrl": "https://drive.google.com/file/d/1xJPNKQLDZezG8aCvTLEx6ggtWXtc8Y5e/view?usp=drivesdk"
+        },
+        {
+          "id": "1T_MF7O26er8jTGtMguITHVyh4HFpZdwT",
+          "name": "IMG_1526.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6231056,
+          "sourceUrl": "https://drive.google.com/file/d/1T_MF7O26er8jTGtMguITHVyh4HFpZdwT/view?usp=drivesdk"
+        },
+        {
+          "id": "1FsTlm30v5Dt89vXI-z8OwQbkqemsAM8h",
+          "name": "IMG_1528.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6368615,
+          "sourceUrl": "https://drive.google.com/file/d/1FsTlm30v5Dt89vXI-z8OwQbkqemsAM8h/view?usp=drivesdk"
+        },
+        {
+          "id": "1mRF4RAsd-w3zid-lzgeZM6h26nRKBJ2L",
+          "name": "IMG_1529.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6221012,
+          "sourceUrl": "https://drive.google.com/file/d/1mRF4RAsd-w3zid-lzgeZM6h26nRKBJ2L/view?usp=drivesdk"
+        },
+        {
+          "id": "10iNARbCvio96igcbeqPoUkkVW3Kuqqin",
+          "name": "IMG_1532.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6270369,
+          "sourceUrl": "https://drive.google.com/file/d/10iNARbCvio96igcbeqPoUkkVW3Kuqqin/view?usp=drivesdk"
+        },
+        {
+          "id": "19fSBPzO8fLXVUyafCCwsMWzhagqXk7sp",
+          "name": "IMG_1535.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6323787,
+          "sourceUrl": "https://drive.google.com/file/d/19fSBPzO8fLXVUyafCCwsMWzhagqXk7sp/view?usp=drivesdk"
+        },
+        {
+          "id": "16l9gZ7J5D-st4EQSuVWOaC-3eKExcnF7",
+          "name": "IMG_1537.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6617638,
+          "sourceUrl": "https://drive.google.com/file/d/16l9gZ7J5D-st4EQSuVWOaC-3eKExcnF7/view?usp=drivesdk"
+        },
+        {
+          "id": "1quzVryzI8EU6vTgkC60pN8jRNtxRuoe8",
+          "name": "IMG_1538.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6353562,
+          "sourceUrl": "https://drive.google.com/file/d/1quzVryzI8EU6vTgkC60pN8jRNtxRuoe8/view?usp=drivesdk"
+        },
+        {
+          "id": "1Hmegi_f9Dr3Odpxl8bJHDBTBUnMkLQ62",
+          "name": "IMG_1541.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6105057,
+          "sourceUrl": "https://drive.google.com/file/d/1Hmegi_f9Dr3Odpxl8bJHDBTBUnMkLQ62/view?usp=drivesdk"
+        },
+        {
+          "id": "1hACN4eujB8lj-ppxQqux7N3yIwgVAN09",
+          "name": "IMG_1544.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5871866,
+          "sourceUrl": "https://drive.google.com/file/d/1hACN4eujB8lj-ppxQqux7N3yIwgVAN09/view?usp=drivesdk"
+        },
+        {
+          "id": "1iP68HO5SBQIGB783_hNZoQZObPVn_wn0",
+          "name": "IMG_1549.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6301039,
+          "sourceUrl": "https://drive.google.com/file/d/1iP68HO5SBQIGB783_hNZoQZObPVn_wn0/view?usp=drivesdk"
+        },
+        {
+          "id": "1jqv0yIcx3IgpmGy3IXofZ7Ebg5ZTo6Uc",
+          "name": "IMG_1550.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6267213,
+          "sourceUrl": "https://drive.google.com/file/d/1jqv0yIcx3IgpmGy3IXofZ7Ebg5ZTo6Uc/view?usp=drivesdk"
+        },
+        {
+          "id": "1NMLXjFw5lPALGVHrcHbRRDVQLhodNtbV",
+          "name": "IMG_1553.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 7093149,
+          "sourceUrl": "https://drive.google.com/file/d/1NMLXjFw5lPALGVHrcHbRRDVQLhodNtbV/view?usp=drivesdk"
+        },
+        {
+          "id": "17HFDNlFwkLA_j4RtaSiCo2CDLo0bFOSD",
+          "name": "IMG_1555.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5858869,
+          "sourceUrl": "https://drive.google.com/file/d/17HFDNlFwkLA_j4RtaSiCo2CDLo0bFOSD/view?usp=drivesdk"
+        }
+      ]
+    },
+    {
+      "folderId": "1r5UDM-d9z9piEjGYZE1WUTBm19z_1f9s",
+      "title": "HACKATHON - sunday",
+      "url": "https://drive.google.com/drive/folders/1r5UDM-d9z9piEjGYZE1WUTBm19z_1f9s",
+      "photoCount": 29,
+      "totalSourceBytes": 185281282,
+      "nestedFolderCount": 0,
+      "photos": [
+        {
+          "id": "1KtVGCTzrVs-uDbdLAjZKu9im37nTC2EK",
+          "name": "IMG_1561.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6493040,
+          "sourceUrl": "https://drive.google.com/file/d/1KtVGCTzrVs-uDbdLAjZKu9im37nTC2EK/view?usp=drivesdk"
+        },
+        {
+          "id": "1rP8F7k5M3Woo2zdvfIyFK_Kow6qiIfIt",
+          "name": "IMG_1570.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6390274,
+          "sourceUrl": "https://drive.google.com/file/d/1rP8F7k5M3Woo2zdvfIyFK_Kow6qiIfIt/view?usp=drivesdk"
+        },
+        {
+          "id": "1yTzdZWU5WJncWHYuTceUZTqMZMGb5Lgn",
+          "name": "IMG_1572.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6326992,
+          "sourceUrl": "https://drive.google.com/file/d/1yTzdZWU5WJncWHYuTceUZTqMZMGb5Lgn/view?usp=drivesdk"
+        },
+        {
+          "id": "1_el6puWBgKNSK5Ls7eiRsSK6k0rrREwe",
+          "name": "IMG_1574.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6798059,
+          "sourceUrl": "https://drive.google.com/file/d/1_el6puWBgKNSK5Ls7eiRsSK6k0rrREwe/view?usp=drivesdk"
+        },
+        {
+          "id": "1mZqsIPOdFxOaO58Q3laAuZ4p_Y4ZNjCA",
+          "name": "IMG_1576.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6920714,
+          "sourceUrl": "https://drive.google.com/file/d/1mZqsIPOdFxOaO58Q3laAuZ4p_Y4ZNjCA/view?usp=drivesdk"
+        },
+        {
+          "id": "1_cFX8H1H87TRCNR3lMA2lei4KzfobV77",
+          "name": "IMG_1578.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6857414,
+          "sourceUrl": "https://drive.google.com/file/d/1_cFX8H1H87TRCNR3lMA2lei4KzfobV77/view?usp=drivesdk"
+        },
+        {
+          "id": "1-bAQBJJmpeSLw9tsj10sALTGNqIKY_Rc",
+          "name": "IMG_1580.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6455152,
+          "sourceUrl": "https://drive.google.com/file/d/1-bAQBJJmpeSLw9tsj10sALTGNqIKY_Rc/view?usp=drivesdk"
+        },
+        {
+          "id": "1ZmYgQHSouMCZ5PXeIH5LvdhYiR2-ZFls",
+          "name": "IMG_1582.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6073746,
+          "sourceUrl": "https://drive.google.com/file/d/1ZmYgQHSouMCZ5PXeIH5LvdhYiR2-ZFls/view?usp=drivesdk"
+        },
+        {
+          "id": "19GQcMSlUAEP7gGhziaxZehIgT-HwVkok",
+          "name": "IMG_1583.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 7495698,
+          "sourceUrl": "https://drive.google.com/file/d/19GQcMSlUAEP7gGhziaxZehIgT-HwVkok/view?usp=drivesdk"
+        },
+        {
+          "id": "1Ui5cgv8Z-70YwIeYCDMyNBB2gWXM-CFA",
+          "name": "IMG_1585.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6413794,
+          "sourceUrl": "https://drive.google.com/file/d/1Ui5cgv8Z-70YwIeYCDMyNBB2gWXM-CFA/view?usp=drivesdk"
+        },
+        {
+          "id": "1JYsELDgaY9WzlZIx-2RpcGLgmtILqR6K",
+          "name": "IMG_1589.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6617489,
+          "sourceUrl": "https://drive.google.com/file/d/1JYsELDgaY9WzlZIx-2RpcGLgmtILqR6K/view?usp=drivesdk"
+        },
+        {
+          "id": "1b13UzlrLPDBbYyTiRdIf1RecFs3Yo-Gp",
+          "name": "IMG_1593.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5637941,
+          "sourceUrl": "https://drive.google.com/file/d/1b13UzlrLPDBbYyTiRdIf1RecFs3Yo-Gp/view?usp=drivesdk"
+        },
+        {
+          "id": "1C_27gx34Go131z_CB7BFeWHBHUhq-7RE",
+          "name": "IMG_1596.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 7223033,
+          "sourceUrl": "https://drive.google.com/file/d/1C_27gx34Go131z_CB7BFeWHBHUhq-7RE/view?usp=drivesdk"
+        },
+        {
+          "id": "1jU2EJPJJ_roqoiwSw4rQMIJCwSRsScPs",
+          "name": "IMG_1600.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 7144306,
+          "sourceUrl": "https://drive.google.com/file/d/1jU2EJPJJ_roqoiwSw4rQMIJCwSRsScPs/view?usp=drivesdk"
+        },
+        {
+          "id": "16BaQc3FuR42oNrX4fh2-eIF2pjGDMyFu",
+          "name": "IMG_1601.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6183080,
+          "sourceUrl": "https://drive.google.com/file/d/16BaQc3FuR42oNrX4fh2-eIF2pjGDMyFu/view?usp=drivesdk"
+        },
+        {
+          "id": "1bcuQx9YGrlFhZxlnlyB-zWumjkdfkr1c",
+          "name": "IMG_1603.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6302275,
+          "sourceUrl": "https://drive.google.com/file/d/1bcuQx9YGrlFhZxlnlyB-zWumjkdfkr1c/view?usp=drivesdk"
+        },
+        {
+          "id": "1TyArikb2u1f-jYi0ivE8fDZuucEaZi2u",
+          "name": "IMG_1608.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6272897,
+          "sourceUrl": "https://drive.google.com/file/d/1TyArikb2u1f-jYi0ivE8fDZuucEaZi2u/view?usp=drivesdk"
+        },
+        {
+          "id": "1LLfZumAo_FACTd_4IMAqMI_YiZq14MsG",
+          "name": "IMG_1610.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6547128,
+          "sourceUrl": "https://drive.google.com/file/d/1LLfZumAo_FACTd_4IMAqMI_YiZq14MsG/view?usp=drivesdk"
+        },
+        {
+          "id": "1UTRpqS2bYXz4h6BTfakjwznr2Cdc3Bwa",
+          "name": "IMG_1612.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6335421,
+          "sourceUrl": "https://drive.google.com/file/d/1UTRpqS2bYXz4h6BTfakjwznr2Cdc3Bwa/view?usp=drivesdk"
+        },
+        {
+          "id": "1P4ofkbJIxbXM9ImVfejUYiH9R1hgRQUa",
+          "name": "IMG_1614.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6620999,
+          "sourceUrl": "https://drive.google.com/file/d/1P4ofkbJIxbXM9ImVfejUYiH9R1hgRQUa/view?usp=drivesdk"
+        },
+        {
+          "id": "1slY1b8VdOnrucodedfRPAuVbvoyeCvBS",
+          "name": "IMG_1626.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6700774,
+          "sourceUrl": "https://drive.google.com/file/d/1slY1b8VdOnrucodedfRPAuVbvoyeCvBS/view?usp=drivesdk"
+        },
+        {
+          "id": "10W-ad_thCLwCi5UmKb7Q2-E1SnhXjLMq",
+          "name": "IMG_1629.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5556148,
+          "sourceUrl": "https://drive.google.com/file/d/10W-ad_thCLwCi5UmKb7Q2-E1SnhXjLMq/view?usp=drivesdk"
+        },
+        {
+          "id": "1Jrt1KmV8CMnPwjjYgKMYIA5duqTyiOTi",
+          "name": "IMG_1635.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6312714,
+          "sourceUrl": "https://drive.google.com/file/d/1Jrt1KmV8CMnPwjjYgKMYIA5duqTyiOTi/view?usp=drivesdk"
+        },
+        {
+          "id": "1XbXHlCty9eYbC1_u_294M2CXk-Rd-S0i",
+          "name": "IMG_1639.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6471333,
+          "sourceUrl": "https://drive.google.com/file/d/1XbXHlCty9eYbC1_u_294M2CXk-Rd-S0i/view?usp=drivesdk"
+        },
+        {
+          "id": "1JD7XE7dW5vD3scRGMZwvx41-IJsrqYGz",
+          "name": "IMG_1640.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6332375,
+          "sourceUrl": "https://drive.google.com/file/d/1JD7XE7dW5vD3scRGMZwvx41-IJsrqYGz/view?usp=drivesdk"
+        },
+        {
+          "id": "1dY5Mc2RQ-n5XO7cDyBHe5sbRnSyPmTCi",
+          "name": "IMG_1641.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5886395,
+          "sourceUrl": "https://drive.google.com/file/d/1dY5Mc2RQ-n5XO7cDyBHe5sbRnSyPmTCi/view?usp=drivesdk"
+        },
+        {
+          "id": "1aLwcKiQ1lXmkNwrJt7V5OkrFgCGt2mQi",
+          "name": "IMG_1668.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 5465463,
+          "sourceUrl": "https://drive.google.com/file/d/1aLwcKiQ1lXmkNwrJt7V5OkrFgCGt2mQi/view?usp=drivesdk"
+        },
+        {
+          "id": "1c1jq_GxE1l3Iy8W_lGDwrju-a0qBRDto",
+          "name": "IMG_1672.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 4962175,
+          "sourceUrl": "https://drive.google.com/file/d/1c1jq_GxE1l3Iy8W_lGDwrju-a0qBRDto/view?usp=drivesdk"
+        },
+        {
+          "id": "1HDICG1GpbE1luRRiy_tbfcidnQWHnjgk",
+          "name": "IMG_1677.JPG",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 6484453,
+          "sourceUrl": "https://drive.google.com/file/d/1HDICG1GpbE1luRRiy_tbfcidnQWHnjgk/view?usp=drivesdk"
+        }
+      ]
+    }
+  ]
+}

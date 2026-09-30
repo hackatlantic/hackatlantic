@@ -1,14 +1,17 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import App from "./app/App.tsx";
 import JoinPage from "./app/JoinPage.tsx";
 import ApplyPage from "./app/ApplyPage.tsx";
+import PhotoGalleryPage from "./app/PhotoGalleryPage.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/photo-gallery" element={<PhotoGalleryPage />} />
+      <Route path="/photo-gallery." element={<Navigate to="/photo-gallery" replace />} />
       <Route path="/join" element={<JoinPage />} />
       <Route path="/apply" element={<ApplyPage />} />
     </Routes>

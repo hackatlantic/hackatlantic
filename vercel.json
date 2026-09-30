@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/photo-gallery.", "destination": "/photo-gallery", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/photo-gallery", "destination": "/photo-gallery/index.html" }
+  ]
+}

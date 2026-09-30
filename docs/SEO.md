@@ -11,7 +11,13 @@ the marketing site, not the application portal at `apply.hackatlantic.ca`.
 - `WebSite` and `Organization` JSON-LD identifying **Hack Atlantic** and
   **HackAtlantic**, with social links already shown on the homepage.
 - Public `robots.txt` and `sitemap.xml`. The sitemap lists the homepage, not
-  application forms, previews or fragment links.
+  application forms, previews or fragment links. It also lists the public
+  photo gallery at `https://www.hackatlantic.ca/photo-gallery`.
+
+The gallery build emits `dist/photo-gallery/index.html` with a dedicated title,
+description, canonical URL, and matching social metadata. A scoped Vercel rewrite
+serves this entry for `/photo-gallery`; the rest of the existing routing is unchanged.
+Gallery metadata is also applied when the page mounts in the local Vite app.
 
 No paid service, extra dependency, DNS migration or redesign is needed. No
 keywords tag, invented ratings, unconfirmed event venue or fabricated `lastmod`

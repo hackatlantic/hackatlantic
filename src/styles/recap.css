@@ -1106,6 +1106,24 @@ html.recap-document body { background: #f7f5eb; }
   line-height: 26px;
 }
 
+.recap-page .photo-gallery-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background: #193c43;
+  color: #fffdf4;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.recap-page .photo-gallery-button:hover { background: #28535b; }
+.recap-page .photo-gallery-button:focus-visible { outline-color: #b8e9da; outline-offset: -6px; }
+
 /* Reference c54 / mobile c161 */
 
 .recap-page .winners {
