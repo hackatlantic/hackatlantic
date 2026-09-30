@@ -241,16 +241,6 @@ export const recapContent: RecapContent = {
       ]
     }
   ],
-  "albums": [
-    {
-      "label": "Photo album ↗",
-      "href": "https://drive.google.com/drive/folders/1fYRXdQMh9KY_jxa79B7JT-Tw_QLHkSjN"
-    },
-    {
-      "label": "More photos ↗",
-      "href": "https://drive.google.com/drive/folders/1r5UDM-d9z9piEjGYZE1WUTBm19z_1f9s"
-    }
-  ],
   "awards": [
     {
       "title": "Track winners",

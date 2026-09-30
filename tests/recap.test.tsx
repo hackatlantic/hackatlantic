@@ -101,8 +101,8 @@ describe("approved recap content", () => {
     expect(screen.queryByText("Frequently Asked Questions")).toBeNull();
     expect(screen.getAllByText("PARTICIPANT Q&A")).toHaveLength(8);
     expect(screen.getAllByRole("img", { name: /Hack Atlantic weekend/ })).toHaveLength(12);
-    expect(screen.getByRole("link", { name: "Photo album ↗" })).toHaveAttribute("href", "https://drive.google.com/drive/folders/1fYRXdQMh9KY_jxa79B7JT-Tw_QLHkSjN");
-    expect(screen.getByRole("link", { name: "More photos ↗" })).toHaveAttribute("href", "https://drive.google.com/drive/folders/1r5UDM-d9z9piEjGYZE1WUTBm19z_1f9s");
+    expect(screen.queryByRole("link", { name: "Photo album ↗" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "More photos ↗" })).toBeNull();
   });
 
   it("preserves the ten project destinations and makes external links safe", () => {

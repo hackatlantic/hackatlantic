@@ -116,9 +116,6 @@ function Stories({ layout }: { layout: Layout }) {
       <div className="stories">
         {content.stories.map((story) => <PhotoStory key={story.photos[0].src} story={story} layout={layout} />)}
       </div>
-      <div className="albums">
-        {content.albums.map((album) => <ExternalLink className="link" key={album.href} href={album.href}><p className="album-label">{album.label}</p></ExternalLink>)}
-      </div>
     </section>
   );
 }

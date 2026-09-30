@@ -46,7 +46,6 @@ export interface RecapContent {
   hero: { image: string; logo: string; title: string; description: string; cta: string };
   statistics: { value: string; label: string }[];
   stories: PhotoStoryContent[];
-  albums: { label: string; href: string }[];
   awards: { title: string; projects: ProjectContent[] }[];
   judges: JudgeContent[];
   sponsors: { title: string; desktopColumns: number; logos: SponsorContent[] }[];
