@@ -8,7 +8,7 @@ import {
   ScrollTitle,
 } from "../src/app/components/landing/LandingMotion";
 import { CoastPostcard } from "../src/app/components/landing/CoastPostcard";
-import { faqs, sponsorRows } from "../src/app/components/landing/content";
+import { faqs } from "../src/app/components/landing/content";
 import {
   ditherColor,
   sampleCells,
@@ -161,16 +161,6 @@ describe("motion and source content", () => {
       screen.getByRole("heading", { name: "Build something together." }),
     ).toHaveTextContent("Build something together.");
     expect(document.querySelector("h2 [aria-hidden]")).toBeNull();
-  });
-  it("retains every supporter without duplicating UNB", () => {
-    const sponsors = sponsorRows.flat();
-    expect(sponsorRows.map((row) => row.length)).toEqual([2, 2, 2, 2, 2, 3]);
-    expect(sponsors).toHaveLength(13);
-    expect(new Set(sponsors.map((item) => item.name)).size).toBe(13);
-    expect(sponsors.map((item) => item.name)).toEqual(expect.arrayContaining(["SmartSkin", "NordPass", "Introhive"]));
-    expect(
-      sponsors.filter((item) => item.name === "University of New Brunswick"),
-    ).toHaveLength(1);
   });
   it("keeps the original postcard available and does not autoplay", async () => {
     const user = userEvent.setup();

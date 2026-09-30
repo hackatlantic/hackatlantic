@@ -6,7 +6,7 @@ import { describe, it } from "node:test";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const canonical = "https://www.hackatlantic.ca/";
-const title = "Hack Atlantic | Atlantic Canada's Student Hackathon";
+const title = "Hack Atlantic — Orange recap";
 
 // Check both source and the static files sent to Vercel. Run the build first.
 for (const directory of ["", "dist"]) {
@@ -27,7 +27,7 @@ for (const directory of ["", "dist"]) {
       assert.equal([...html.matchAll(/rel="canonical"/g)].length, 1);
       assert.ok(html.includes(`rel="canonical" href="${canonical}"`));
       assert.ok(html.indexOf('rel="canonical"') < html.indexOf("</head>"));
-      assert.ok(meta("description").includes("student-run hackathon in Atlantic Canada"));
+      assert.ok(meta("description").includes("recap, participant stories, and award-winning projects"));
       assert.ok(html.includes('rel="icon" type="image/png" href="/favicon.png"'));
       assert.ok(html.includes('rel="apple-touch-icon" href="/favicon.png"'));
       assert.ok(existsSync(resolve(publicRoot, "favicon.png")));

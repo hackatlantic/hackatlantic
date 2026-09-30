@@ -1,0 +1,97 @@
+{
+  "sourceSha256": "c1dd684b90d6b709d1f46ec6a6ae9bb496f65a300f55c2cbf2f7f1c8c165ea71",
+  "assets": {
+    "1659e18bd6d3f11b7607": {
+      "path": "/recap/coastal-sunset.png",
+      "sha256": "1659e18bd6d3f11b760760e60d94742ecefbeab2243ed2fd6a9cd12faee043fa"
+    },
+    "b65e89f773168b0ceb2e": {
+      "path": "/recap/logo.jpg",
+      "sha256": "b65e89f773168b0ceb2e448bd07b768bc9923456f14090a3dd2169a3d6d027e1"
+    },
+    "0136b6fce6dd9abdce47": {
+      "path": "/recap/event-1529.jpg",
+      "sha256": "0136b6fce6dd9abdce470db51df913334e2b0208f870668ac039ac2442d53513"
+    },
+    "f3095a3feed8102193c8": {
+      "path": "/recap/event-1532.jpg",
+      "sha256": "f3095a3feed8102193c8b42ca7529a7575bedd18e00d325fac78956076be6682"
+    },
+    "254a1e64c7761a32de2e": {
+      "path": "/recap/event-1537.jpg",
+      "sha256": "254a1e64c7761a32de2e315fd43746558b1a3714c077570dd674d5eb89ae17bc"
+    },
+    "f2b8347e68999e41cabb": {
+      "path": "/recap/event-1538.jpg",
+      "sha256": "f2b8347e68999e41cabb2b432f16838dc0d6ace4820d7431edac7f3472b5a26b"
+    },
+    "89de965876e1c30b9c99": {
+      "path": "/recap/event-1541.jpg",
+      "sha256": "89de965876e1c30b9c9993b39bed9364a08a09b62bdeb04faa3d87e8b819a3db"
+    },
+    "1423c0b647fa00bddb09": {
+      "path": "/recap/event-1553.jpg",
+      "sha256": "1423c0b647fa00bddb09e6ed12f912516dd56d78a57cac3a4c140c9ecd07e446"
+    },
+    "98a0d794286e67f33876": {
+      "path": "/recap/event-1570.jpg",
+      "sha256": "98a0d794286e67f3387628e790779ce141532c649cdf2f9d625d807df3cb3046"
+    },
+    "ddc88d1200eb35c2e0c0": {
+      "path": "/recap/event-1578.jpg",
+      "sha256": "ddc88d1200eb35c2e0c00505ad1a10fc2de651d3822488544184c5b54a3e2aa9"
+    },
+    "b4bc447abae20f09d9c7": {
+      "path": "/recap/event-1583.jpg",
+      "sha256": "b4bc447abae20f09d9c73d1f4eb18eb3f2511441739f24733bdb4f25f226fe2f"
+    },
+    "c26d1c2f5df5fe073cbb": {
+      "path": "/recap/event-1610.jpg",
+      "sha256": "c26d1c2f5df5fe073cbb59014220c83d3dd31381b8ccc54962838912d17f0612"
+    },
+    "3863febd3b52f50e3d6a": {
+      "path": "/recap/event-1614.jpg",
+      "sha256": "3863febd3b52f50e3d6aaf5cb17d505a9973295f010981369c94b95489d3d1a1"
+    },
+    "449aa34bacd4ce52a2ce": {
+      "path": "/recap/event-1677.jpg",
+      "sha256": "449aa34bacd4ce52a2ceba5b937d7cce050bf85fbcf239494062eba676b59f0e"
+    },
+    "d0b61b7c6cb7e39a7750": {
+      "path": "/recap/jessica-venoitte.png",
+      "sha256": "d0b61b7c6cb7e39a77503be9f3b66043cc429deb882b7457794760307305f77a"
+    },
+    "9de67c4386787fd5f710": {
+      "path": "/recap/promise-abel.png",
+      "sha256": "9de67c4386787fd5f710ca35ae02aa3c598a3430aa261318d53e6d3bf1eb1515"
+    },
+    "d25f336161d13b1fe96d": {
+      "path": "/recap/yousef-khirallah.png",
+      "sha256": "d25f336161d13b1fe96dc987eb56b5975b4f473d87dad3ac7c180d9bbbeb8ef0"
+    },
+    "8cf12db82243c082b477": {
+      "path": "/recap/mantas-groza.png",
+      "sha256": "8cf12db82243c082b477888c5363bd3c4441929936e96ee20cd607b583fe9f1e"
+    },
+    "8ceab4a457f2455120ee": {
+      "path": "/recap/mike-waugh.png",
+      "sha256": "8ceab4a457f2455120eeefc090b140f6660e86dcada17297887d668079374e43"
+    },
+    "62fd2be18d3bfed58d94": {
+      "path": "/recap/robert-foley.png",
+      "sha256": "62fd2be18d3bfed58d94fa463643dd5acdcac9665bf5330afbdb626d64ded013"
+    },
+    "95a4772e16f1c6adae10": {
+      "path": "/recap/gold-sponsors.png",
+      "sha256": "95a4772e16f1c6adae10e4ebabffe9e36a7256c4efee74aff16fb5a0716e3a11"
+    },
+    "c8cf2c0ff26e53989d36": {
+      "path": "/recap/silver-sponsors.png",
+      "sha256": "c8cf2c0ff26e53989d3651044520d038ad97b54bdec09077b054279fc567df08"
+    },
+    "99db6c6b88369d466b84": {
+      "path": "/recap/partners.png",
+      "sha256": "99db6c6b88369d466b84d7a8eb0afac24809492f86f6120033881d857d51644e"
+    }
+  }
+}

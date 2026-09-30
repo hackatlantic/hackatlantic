@@ -1,0 +1,2014 @@
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/league-spartan/league-spartan-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('/fonts/league-spartan/league-spartan-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('/fonts/league-spartan/league-spartan-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url('/fonts/league-spartan/league-spartan-800.ttf') format('truetype');
+}
+
+/* The approved export's measurements are preserved verbatim below. */
+.recap-page {
+  min-height: 100%;
+  overflow-x: clip;
+  background: #f7f5eb;
+  color: #193c43;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.recap-page, .recap-page * { box-sizing: border-box; border-width: 0; border-style: solid; }
+.recap-page :is(p, h1, h2, h3, h4, figure) { margin: 0; }
+.recap-page :is(h1, h2, h3, h4) { font-size: inherit; font-weight: inherit; line-height: inherit; }
+.recap-page a { color: inherit; text-decoration: none; }
+.recap-page img { display: block; max-width: 100%; height: auto; }
+.recap-page a:hover { text-decoration: underline; }
+.recap-page a:focus-visible { outline: 3px solid #6b4c8c; outline-offset: 5px; }
+.recap-view { margin: 0; width: 1440px; }
+.recap-view.recap-mobile { width: 390px; }
+html.recap-document { scroll-padding-top: 0; scroll-behavior: smooth; }
+html.recap-document body { background: #f7f5eb; }
+@media (prefers-reduced-motion: reduce) { html.recap-document { scroll-behavior: auto; } }
+.recap-page .skip { position: fixed; top: -100px; left: 12px; z-index: 9; background: white; padding: 12px; }
+.recap-page .skip:focus { top: 12px; }
+.recap-page .quote-frame { display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0; }
+.recap-page .quote-rotation { flex: none; }
+.recap-page .sponsor-image-size { position: relative; flex-shrink: 0; }
+
+
+/* Reference c0 */
+
+.recap-page .canvas {
+  background-color: #f7f5eb;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Reference c1 / mobile c121 */
+
+.recap-page .hero {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 920px;
+  align-items: flex-start;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .hero {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 780px;
+  align-items: flex-start;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 390px;
+}
+
+/* Reference c2 / mobile c122 */
+
+.recap-page .hero-art {
+  position: absolute;
+  height: 1799.358px;
+  left: 0;
+  top: -879.36px;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .hero-art {
+  position: absolute;
+  height: 779.722px;
+  left: -117px;
+  top: 0.28px;
+  width: 624px;
+}
+
+/* Reference c3 */
+
+.recap-page .cover-image {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Reference c4 / mobile c123 */
+
+.recap-page .navigation {
+  align-content: stretch;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  flex-shrink: 0;
+  width: 720px;
+}
+
+.recap-page .recap-mobile .navigation {
+  align-content: stretch;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  flex-shrink: 0;
+  width: 390px;
+}
+
+/* Navigation follows the requested links-left, social-icons-right layout. */
+.recap-page .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #193c43;
+  white-space: nowrap;
+}
+
+.recap-page .navigation-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.recap-page .nav-social {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.recap-page .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  color: #193c43;
+}
+
+.recap-page .recap-mobile .nav-links {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 20px;
+  row-gap: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.recap-page .recap-mobile .nav-social {
+  gap: 4px;
+}
+
+/* Reference c10 */
+
+.recap-page .link {
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Reference c11 */
+
+.recap-page .underlined {
+  text-underline-position: from-font;
+  text-decoration-thickness: from-font;
+  text-decoration-style: solid;
+  line-height: 26px;
+  text-decoration-line: underline;
+}
+
+/* Reference c12 */
+
+.recap-page .line {
+  line-height: 26px;
+}
+
+/* Reference c13 / mobile c127 */
+
+.recap-page .hero-content {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  padding-bottom: 0px;
+  padding-top: 144px;
+  padding-left: 120px;
+  padding-right: 120px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .hero-content {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  padding-bottom: 0px;
+  padding-top: 120px;
+  padding-left: 24px;
+  padding-right: 24px;
+  position: relative;
+  flex-shrink: 0;
+  width: 390px;
+}
+
+/* Reference c14 / mobile c128 */
+
+.recap-page .hero-copy {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1120px;
+}
+
+.recap-page .recap-mobile .hero-copy {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c15 / mobile c129 */
+
+.recap-page .hero-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 124px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 112px;
+  color: #193c43;
+  width: 1120px;
+}
+
+.recap-page .recap-mobile .hero-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 58px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 48px;
+  color: #193c43;
+  width: 342px;
+}
+
+/* Reference c16 / mobile c130 */
+
+.recap-page .hero-description {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 44px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 34px;
+  color: #193c43;
+  width: 1120px;
+}
+
+.recap-page .recap-mobile .hero-description {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 32px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #193c43;
+  width: 342px;
+}
+
+/* Reference c17 / mobile c131 */
+
+.recap-page .hero-link {
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  height: 48px;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.recap-page .recap-mobile .hero-link {
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  height: 48px;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 280px;
+}
+
+/* Reference c18 / mobile c132 */
+
+.recap-page .hero-link-label {
+  text-underline-position: from-font;
+  word-break: break-word;
+  text-decoration-thickness: from-font;
+  text-decoration-style: solid;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  line-height: 30px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 22px;
+  color: #193c43;
+  text-align: left;
+  text-decoration-line: underline;
+  white-space: pre;
+}
+
+.recap-page .recap-mobile .hero-link-label {
+  text-underline-position: from-font;
+  word-break: break-word;
+  text-decoration-thickness: from-font;
+  text-decoration-style: solid;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  line-height: 28px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 20px;
+  color: #193c43;
+  text-align: left;
+  text-decoration-line: underline;
+  white-space: pre;
+}
+
+/* Reference c19 / mobile c133 */
+
+.recap-page .statistics {
+  word-break: break-word;
+  background-color: #b8e9da;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .statistics {
+  word-break: break-word;
+  background-color: #b8e9da;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  width: 390px;
+}
+
+/* Reference c20 / mobile c134 */
+
+.recap-page .stats-title {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 60px;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 56px;
+  width: min-content;
+}
+
+.recap-page .recap-mobile .stats-title {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 40px;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 36px;
+  width: min-content;
+}
+
+/* Reference c21 / mobile c135 */
+
+.recap-page .stats-grid {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .stats-grid {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c22 / mobile c136 */
+
+.recap-page .stats-row {
+  align-content: stretch;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .stats-row {
+  align-content: stretch;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c23 / mobile c137 */
+
+.recap-page .stat {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 394.667px;
+}
+
+.recap-page .recap-mobile .stat {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 159px;
+}
+
+/* Reference c24 / mobile c138 */
+
+.recap-page .stat-value {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 60px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 56px;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .stat-value {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 40px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 36px;
+  width: 100%;
+}
+
+/* Reference c25 */
+
+.recap-page .stat-label {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  line-height: 26px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Reference c26 / mobile c139 */
+
+.recap-page .cream-section {
+  background-color: #f7f5eb;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .cream-section {
+  background-color: #f7f5eb;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
+  flex-shrink: 0;
+  width: 390px;
+}
+
+/* Reference c27 / mobile c140 */
+
+.recap-page .recap-heading {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .recap-heading {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c28 / mobile c141 */
+
+.recap-page .recap-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 60px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 56px;
+  color: #193c43;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .recap-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 40px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 36px;
+  color: #193c43;
+  width: 100%;
+}
+
+/* Reference c29 / mobile c142 */
+
+.recap-page .stories {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: flex-start;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .stories {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: flex-start;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c30 / mobile c143 */
+
+.recap-page .story {
+  align-content: stretch;
+  display: flex;
+  gap: 96px;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .story {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c31 / mobile c144 */
+
+.recap-page .photo-stack {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 608px;
+}
+
+.recap-page .recap-mobile .photo-stack {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c32 / mobile c145 */
+
+.recap-page .photo-left {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  margin-bottom: -96px;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 608px;
+}
+
+.recap-page .recap-mobile .photo-left {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  margin-bottom: -48px;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c33 / mobile c146 */
+
+.recap-page .polaroid {
+  background-color: #fffdf4;
+  align-content: stretch;
+  filter: drop-shadow(0px 12px 16px rgba(0,8,13,0.14));
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 348px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  flex-shrink: 0;
+  width: 400px;
+}
+
+.recap-page .recap-mobile .polaroid {
+  background-color: #fffdf4;
+  align-content: stretch;
+  filter: drop-shadow(0px 8.1px 10.8px rgba(0,8,13,0.14));
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 234.9px;
+  align-items: flex-start;
+  padding-bottom: 27px;
+  padding-top: 10.8px;
+  padding-left: 10.8px;
+  padding-right: 10.8px;
+  position: relative;
+  flex-shrink: 0;
+  width: 270px;
+}
+
+/* Reference c34 */
+
+.recap-page .photo-window {
+  flex: 1 0 0;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}
+
+/* Reference c35 / mobile c147 */
+
+.recap-page .photo-right {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-bottom: -96px;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 608px;
+}
+
+.recap-page .recap-mobile .photo-right {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-bottom: -48px;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c36 / mobile c148 */
+
+.recap-page .photo-offset {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  padding-left: 48px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 608px;
+}
+
+.recap-page .recap-mobile .photo-offset {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  padding-left: 24px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c37 / mobile c149 */
+
+.recap-page .responses {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 852px;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 576px;
+}
+
+.recap-page .recap-mobile .responses {
+  min-height: initial;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c38 / mobile c150 */
+
+.recap-page .response-left {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 576px;
+}
+
+.recap-page .recap-mobile .response-left {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c46 / mobile c154 */
+
+.recap-page .response-right {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 576px;
+}
+
+.recap-page .recap-mobile .response-right {
+  align-content: stretch;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c41 / mobile c152 */
+
+.recap-page .quote {
+  word-break: break-word;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  width: 480px;
+}
+
+.recap-page .recap-mobile .quote {
+  word-break: break-word;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  width: 318px;
+}
+
+/* Reference c42 */
+
+.recap-page .quote-label {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #18b9b0;
+  width: 100%;
+}
+
+/* Reference c43 */
+
+.recap-page .quote-question {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 34px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 28px;
+  color: #193c43;
+  width: 100%;
+}
+
+/* Reference c44 / mobile c153 */
+
+.recap-page .quote-answer {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 32px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 20px;
+  color: #344f55;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .quote-answer {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 26px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #344f55;
+  width: 100%;
+}
+
+/* Reference c45 */
+
+.recap-page .quote-author {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  line-height: 26px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #193c43;
+  width: 100%;
+}
+
+/* Reference c52 / mobile c160 */
+
+.recap-page .albums {
+  word-break: break-word;
+  align-content: stretch;
+  display: flex;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  gap: 24px;
+  align-items: flex-start;
+  line-height: 0;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #193c43;
+  width: 1280px;
+  white-space: nowrap;
+}
+
+.recap-page .recap-mobile .albums {
+  word-break: break-word;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  gap: 24px;
+  align-items: flex-start;
+  line-height: 0;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #193c43;
+  width: 342px;
+  white-space: nowrap;
+}
+
+/* Reference c53 */
+
+.recap-page .album-label {
+  cursor: pointer;
+  line-height: 26px;
+}
+
+/* Reference c54 / mobile c161 */
+
+.recap-page .winners {
+  background-color: #b8e9da;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .winners {
+  background-color: #b8e9da;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
+  flex-shrink: 0;
+  width: 390px;
+}
+
+/* Reference c55 / mobile c56 */
+
+.recap-page .section-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 60px;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 56px;
+  color: #193c43;
+  width: min-content;
+}
+
+.recap-page .recap-mobile .section-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 40px;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 36px;
+  color: #193c43;
+  width: min-content;
+}
+
+/* Reference c56 */
+
+.recap-page .group-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 40px;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 36px;
+  color: #193c43;
+  width: min-content;
+}
+
+/* Reference c21 / mobile c135 */
+
+.recap-page .award-group {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .award-group {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c21 / mobile c162 */
+
+.recap-page .projects {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .projects {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c57 / mobile c163 */
+
+.recap-page .project-row {
+  word-break: break-word;
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: left;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .project-row {
+  word-break: initial;
+  cursor: initial;
+  color: initial;
+  text-align: initial;
+  align-content: stretch;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c58 / mobile c164 */
+
+.recap-page .project {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 405.333px;
+}
+
+.recap-page .recap-mobile .project {
+  word-break: break-word;
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: left;
+  width: 342px;
+}
+
+/* Reference c65 / mobile c164 */
+
+.recap-page .finalist {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  width: 296px;
+}
+
+.recap-page .recap-mobile .finalist {
+  word-break: break-word;
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 0px;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: left;
+  width: 342px;
+}
+
+/* Reference c59 */
+
+.recap-page .project-award {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 12px;
+  width: 100%;
+}
+
+/* Reference c60 */
+
+.recap-page .project-heading {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 0;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 28px;
+  width: 100%;
+}
+
+/* Reference c61 */
+
+.recap-page .project-name {
+  cursor: pointer;
+  line-height: 34px;
+}
+
+/* Reference c62 */
+
+.recap-page .project-members {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 0;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Reference c63 */
+
+.recap-page .project-member-line {
+  line-height: 26px;
+  margin-bottom: 0;
+}
+
+/* Reference c64 */
+
+.recap-page .project-member {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 26px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Reference c21 / mobile c165 */
+
+.recap-page .judge-grid {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .judge-grid {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c66 / mobile c166 */
+
+.recap-page .judge-row {
+  align-content: stretch;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .judge-row {
+  align-content: stretch;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c67 / mobile c167 */
+
+.recap-page .judge {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  width: 296px;
+}
+
+.recap-page .recap-mobile .judge {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  width: 163px;
+}
+
+/* Reference c68 / mobile c168 */
+
+.recap-page .portrait {
+  border-width: 5.444px;
+  border-color: #6b4c8c;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  border-radius: 90px;
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+}
+
+.recap-page .recap-mobile .portrait {
+  border-width: 4.356px;
+  border-color: #6b4c8c;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  border-radius: 90px;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+
+/* Reference c69 */
+
+.recap-page .portrait-window {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 90px;
+}
+
+/* Reference c71 / mobile c169 */
+
+.recap-page .judge-info {
+  word-break: break-word;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 6.222px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: center;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .judge-info {
+  word-break: break-word;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 4.978px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: center;
+  width: 100%;
+}
+
+/* Reference c72 / mobile c170 */
+
+.recap-page .judge-name {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 23.333px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 18.67px;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .judge-name {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 14.933px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 12.44px;
+  width: 100%;
+}
+
+/* Reference c73 / mobile c171 */
+
+.recap-page .judge-role {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 18.667px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 12.44px;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .judge-role {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 12.444px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 8.71px;
+  width: 100%;
+}
+
+/* Reference c79 / mobile c172 */
+
+.recap-page .judge-roles {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 0;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 12.44px;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .judge-roles {
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 500;
+  line-height: 0;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 8.71px;
+  width: 100%;
+}
+
+/* Reference c80 / mobile c173 */
+
+.recap-page .judge-role-line {
+  line-height: 18.667px;
+  margin-bottom: 0;
+}
+
+.recap-page .recap-mobile .judge-role-line {
+  line-height: 12.444px;
+  margin-bottom: 0;
+}
+
+/* Reference c81 / mobile c174 */
+
+.recap-page .judge-role-last {
+  line-height: 18.667px;
+}
+
+.recap-page .recap-mobile .judge-role-last {
+  line-height: 12.444px;
+}
+
+/* Reference c82 / mobile c175 */
+
+.recap-page .initials-portrait {
+  background-color: #cad7d1;
+  border-width: 5.444px;
+  border-color: #6b4c8c;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  border-radius: 90px;
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+}
+
+.recap-page .recap-mobile .initials-portrait {
+  background-color: #cad7d1;
+  border-width: 4.356px;
+  border-color: #6b4c8c;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  border-radius: 90px;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+
+/* Reference c83 / mobile c176 */
+
+.recap-page .initials {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 24.198px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 19.36px;
+  color: #193c43;
+  text-align: center;
+  width: 100%;
+}
+
+.recap-page .recap-mobile .initials {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 15.486px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 12.39px;
+  color: #193c43;
+  text-align: center;
+  width: 100%;
+}
+
+/* Reference c84 / mobile c177 */
+
+.recap-page .sponsors {
+  background-color: #fffdf4;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  position: relative;
+  flex-shrink: 0;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .sponsors {
+  background-color: #fffdf4;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
+  flex-shrink: 0;
+  width: 390px;
+}
+
+/* Reference c85 / mobile c135 */
+
+.recap-page .sponsor-group {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .sponsor-group {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c86 */
+
+.recap-page .sponsor-title {
+  word-break: break-word;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 800;
+  line-height: 34px;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 28px;
+  color: #193c43;
+  width: min-content;
+}
+
+/* Reference c85 / mobile c165 */
+
+.recap-page .sponsor-grid {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .sponsor-grid {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c87 / mobile c166 */
+
+.recap-page .sponsor-row {
+  align-content: stretch;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 1280px;
+}
+
+.recap-page .recap-mobile .sponsor-row {
+  align-content: stretch;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c88 / mobile c178 */
+
+.recap-page .gold-tile {
+  background-color: white;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 302px;
+}
+
+.recap-page .recap-mobile .gold-tile {
+  background-color: white;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 163px;
+}
+
+/* Reference c98 / mobile c178 */
+
+.recap-page .sponsor-tile {
+  background-color: white;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 410.667px;
+}
+
+.recap-page .recap-mobile .sponsor-tile {
+  background-color: white;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 163px;
+}
+
+/* Reference c90 */
+
+.recap-page .crop-window {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Reference c117 / mobile c192 */
+
+.recap-page .closing {
+  word-break: break-word;
+  background-color: #b8e9da;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: center;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .closing {
+  word-break: break-word;
+  background-color: #b8e9da;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: clip;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
+  flex-shrink: 0;
+  color: #193c43;
+  text-align: center;
+  width: 390px;
+}
+
+/* Reference c118 / mobile c193 */
+
+.recap-page .footer {
+  word-break: break-word;
+  background-color: #b8e9da;
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  gap: 32px;
+  align-items: flex-start;
+  line-height: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #193c43;
+  width: 1440px;
+}
+
+.recap-page .recap-mobile .footer {
+  word-break: break-word;
+  background-color: #b8e9da;
+  align-content: stretch;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: 'League Spartan',sans-serif;
+  font-weight: 700;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  line-height: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #193c43;
+  width: 390px;
+}
+
+/* Reference c119 / mobile c194 */
+
+.recap-page .footer-brand {
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.recap-page .recap-mobile .footer-brand {
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  width: 342px;
+}
+
+/* Reference c120 */
+
+.recap-page .back-to-top {
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  text-align: left;
+  width: 150px;
+}
